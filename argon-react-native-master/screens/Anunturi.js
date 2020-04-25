@@ -36,7 +36,7 @@ const categories = [
   }
 ];
 
-class Articles extends React.Component {
+class Anunturi extends React.Component {
   renderProduct = (item, index) => {
     const { navigation } = this.props;
 
@@ -250,4 +250,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Articles;
+export default Anunturi;

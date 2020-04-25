@@ -13,7 +13,7 @@ import { Images, argonTheme } from "../constants";
 
 const { width, height } = Dimensions.get("screen");
 
-class Register extends React.Component {
+class Autentificare extends React.Component {
   render() {
     return (
       <Block flex middle>
@@ -144,7 +144,7 @@ class Register extends React.Component {
                     <Block middle>
                       <Button color="primary" style={styles.createButton}>
                         <Text bold size={14} color={argonTheme.COLORS.WHITE}>
-                          CREATE ACCOUNT
+                          CREEAZA CONT
                         </Text>
                       </Button>
                     </Block>
@@ -212,4 +212,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Register;
+export default Autentificare;

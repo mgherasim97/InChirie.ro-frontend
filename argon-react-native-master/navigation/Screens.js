@@ -12,9 +12,9 @@ import Home from "../screens/Home";
 import Onboarding from "../screens/Onboarding";
 import Pro from "../screens/Pro";
 import Profile from "../screens/Profile";
-import Register from "../screens/Register";
+import Autentificare from "../screens/Autentificare";
 import Elements from "../screens/Elements";
-import Articles from "../screens/Articles";
+import Anunturi from "../screens/Anunturi";
 // drawer
 import CustomDrawerContent from "./Menu";
 
@@ -62,15 +62,15 @@ function ElementsStack(props) {
   );
 }
 
-function ArticlesStack(props) {
+function AnunturiStack(props) {
   return (
     <Stack.Navigator mode="card" headerMode="screen">
       <Stack.Screen
-        name="Articles"
-        component={Articles}
+        name="Anunturi"
+        component={Anunturi}
         options={{
           header: ({ navigation, scene }) => (
-            <Header title="Articles" navigation={navigation} scene={scene} />
+            <Header title="Anunturi" navigation={navigation} scene={scene} />
           ),
           cardStyle: { backgroundColor: "#F8F9FE" }
         }}
@@ -225,9 +225,9 @@ function AppStack(props) {
     >
       <Drawer.Screen name="Home" component={HomeStack} />
       <Drawer.Screen name="Profile" component={ProfileStack} />
-      <Drawer.Screen name="Account" component={Register} />
+      <Drawer.Screen name="Autentificare" component={Autentificare} />
       <Drawer.Screen name="Elements" component={ElementsStack} />
-      <Drawer.Screen name="Articles" component={ArticlesStack} />
+      <Drawer.Screen name="Anunturi" component={AnunturiStack} />
     </Drawer.Navigator>
   );
 }

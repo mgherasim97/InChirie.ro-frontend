@@ -108,13 +108,13 @@ argon-react-native/
 │   └── Screens.js
 ├── package.json
 ├── screens
-│   ├── Articles.js
+│   ├── Anunturi.js
 │   ├── Home.js
 │   ├── Elements.js
 │   ├── Onboarding.js
 │   ├── Pro.js
 │   ├── Profile.js
-│   └── Register.js
+│   └── Autentificare.js
 
 ```
 
