@@ -8,11 +8,11 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Block } from "galio-framework";
 
 // screens
-import Home from "../screens/Home";
+import Acasa from "../screens/Acasa";
 import Onboarding from "../screens/Onboarding";
 import Pro from "../screens/Pro";
-import Profile from "../screens/Profile";
 import Autentificare from "../screens/Autentificare";
+import Profil from "../screens/Profil";
 import Elements from "../screens/Elements";
 import Anunturi from "../screens/Anunturi";
 // drawer
@@ -96,18 +96,18 @@ function AnunturiStack(props) {
   );
 }
 
-function ProfileStack(props) {
+function ProfilStack(props) {
   return (
-    <Stack.Navigator initialRouteName="Profile" mode="card" headerMode="screen">
+    <Stack.Navigator initialRouteName="Profil" mode="card" headerMode="screen">
       <Stack.Screen
-        name="Profile"
-        component={Profile}
+        name="Profil"
+        component={Profil}
         options={{
           header: ({ navigation, scene }) => (
             <Header
               transparent
               white
-              title="Profile"
+              title="Profil"
               navigation={navigation}
               scene={scene}
             />
@@ -137,16 +137,16 @@ function ProfileStack(props) {
   );
 }
 
-function HomeStack(props) {
+function AcasaStack(props) {
   return (
     <Stack.Navigator mode="card" headerMode="screen">
       <Stack.Screen
-        name="Home"
-        component={Home}
+        name="Acasa"
+        component={Acasa}
         options={{
           header: ({ navigation, scene }) => (
             <Header
-              title="Home"
+              title="Acasa"
               search
               options
               navigation={navigation}
@@ -221,10 +221,10 @@ function AppStack(props) {
           fontWeight: "normal"
         }
       }}
-      initialRouteName="Home"
+      initialRouteName="Acasa"
     >
-      <Drawer.Screen name="Home" component={HomeStack} />
-      <Drawer.Screen name="Profile" component={ProfileStack} />
+      <Drawer.Screen name="Acasa" component={AcasaStack} />
+      <Drawer.Screen name="Profil" component={ProfilStack} />
       <Drawer.Screen name="Autentificare" component={Autentificare} />
       <Drawer.Screen name="Elements" component={ElementsStack} />
       <Drawer.Screen name="Anunturi" component={AnunturiStack} />

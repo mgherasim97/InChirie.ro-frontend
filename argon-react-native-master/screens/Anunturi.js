@@ -155,7 +155,7 @@ class Anunturi extends React.Component {
             <Text
               size={12}
               color={theme.COLORS.PRIMARY}
-              onPress={() => navigation.navigate("Home")}
+              onPress={() => navigation.navigate("Acasa")}
             >
               View All
             </Text>

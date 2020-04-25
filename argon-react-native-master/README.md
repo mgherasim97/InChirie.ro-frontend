@@ -58,9 +58,9 @@ Let us know your thoughts below. And good luck with development!
 
 ## Demo
 
-| Home Screen | Profile Screen | Elements Screen | Register Screen |
+| Acasa Screen | Profil Screen | Elements Screen | Register Screen |
 | --- | --- | --- | --- |
-| [![Home Screen](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-react-native/home-screen.png)](https://demos.creative-tim.com/argon-react-native/) | [![Profile Screen](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-react-native/profile-screen.png)](https://demos.creative-tim.com/argon-react-native/) | [![Elements Screen](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-react-native/elements-screen.png)](https://demos.creative-tim.com/argon-react-native/) | [![Register Screen](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-react-native/register-screen.png)](https://demos.creative-tim.com/argon-react-native/) |
+| [![Acasa Screen](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-react-native/home-screen.png)](https://demos.creative-tim.com/argon-react-native/) | [![Profile Screen](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-react-native/profile-screen.png)](https://demos.creative-tim.com/argon-react-native/) | [![Elements Screen](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-react-native/elements-screen.png)](https://demos.creative-tim.com/argon-react-native/) | [![Register Screen](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-react-native/register-screen.png)](https://demos.creative-tim.com/argon-react-native/) |
 
 - [Start page](https://demos.creative-tim.com/argon-react-native)
 - [How to install our free demo](https://demos.creative-tim.com/argon-react-native/docs/#/install)
@@ -109,11 +109,11 @@ argon-react-native/
 ├── package.json
 ├── screens
 │   ├── Anunturi.js
-│   ├── Home.js
+│   ├── Acasa.js
 │   ├── Elements.js
 │   ├── Onboarding.js
 │   ├── Pro.js
-│   ├── Profile.js
+│   ├── Profil.js
 │   └── Autentificare.js
 
 ```
@@ -191,4 +191,3 @@ Facebook: <https://www.facebook.com/CreativeTim>
 Dribbble: <https://dribbble.com/creativetim>
 
 Instagram: <https://www.instagram.com/CreativeTimOfficial>
-
