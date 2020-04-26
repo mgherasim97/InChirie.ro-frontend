@@ -32,7 +32,7 @@ class Onboarding extends React.Component {
         <Block flex space="between" style={styles.padded}>
             <Block flex space="around" style={{ zIndex: 2 }}>
               <Block style={styles.title}>
-                <Block>
+                {/* <Block>
                   <Text color="black" size={40}>
                     Nicăieri nu-i ca acasă,
                   </Text>
@@ -41,7 +41,7 @@ class Onboarding extends React.Component {
                   <Text color="black" size={40}>
                     hai să-ți găsim una!
                   </Text>
-                </Block>
+                </Block> */}
                 {/* <Block style={styles.subTitle}>
                   <Text color="white" size={16}>
                     Fully coded React Native components.
@@ -76,17 +76,18 @@ const styles = StyleSheet.create({
     zIndex: 2,
   },
   button: {
+    marginTop: 225,
     width: width - theme.SIZES.BASE * 4,
     height: theme.SIZES.BASE * 3,
     shadowRadius: 0,
     shadowOpacity: 0
   },
   logo: {//onboarding logo
-    
+    width: 370,
+    height: 162,
     zIndex: 2,
-    marginTop: "-110%",
-    marginLeft: "-20%"
-    
+    position: 'relative',
+    marginTop: '-70%'
     
   },
   title: {
