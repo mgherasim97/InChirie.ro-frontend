@@ -24,7 +24,7 @@
 - changed the whole routing from `Screens.js` because `react-navigation@5.0.0` has a new dynamic API
 - changed `Menu.js` for a new Drawer custom component
 - changed `DrawerItem.js` for a new type of `<DrawerCustomItem />`
-- changed props and variables so that the new `react-navigation` API could work with the following files: `Beauty.js`, `Header.js`, `Product.js`, `Gallery.js`, `Pro.js`, `Product.js`, `Settings.js`, `Register.js`, `Onboarding.js`
+- changed props and variables so that the new `react-navigation` API could work with the following files: `Beauty.js`, `Header.js`, `Product.js`, `Gallery.js`, `Pro.js`, `Product.js`, `Settings.js`, `Register.js`
 
 ## [1.3.0] 2019-11-06
 ### Updated dependencies

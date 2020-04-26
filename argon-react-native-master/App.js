@@ -14,7 +14,7 @@ import { Images, articles, argonTheme } from "./constants";
 
 // cache app images
 const assetImages = [
-  Images.Onboarding,
+  
   Images.LogoOnboarding,
   Images.Logo,
   Images.Pro,

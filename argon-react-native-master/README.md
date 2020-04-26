@@ -22,7 +22,7 @@ Argon React Native comes packed with a large number of components and cards. Put
 View [ all components/cards here](https://demos.creative-tim.com/argon-react-native/index.html#cards).
 
 ### Example Screens
-If you want to get inspiration or just show something directly to your clients, you can jump start your development with our pre-built example screens. From onboarding screens to profile or discover screens, you will be able to quickly set up the basic structure for your React Native mobile project. 
+If you want to get inspiration or just show something directly to your clients, you can jump start your development with our pre-built example screens. 
 
 View [all screens here](https://demos.creative-tim.com/argon-react-native/index.html#screens).
 
@@ -111,7 +111,6 @@ argon-react-native/
 │   ├── Anunturi.js
 │   ├── Acasa.js
 │   ├── Elements.js
-│   ├── Onboarding.js
 │   ├── Pro.js
 │   ├── Profil.js
 │   └── Autentificare.js

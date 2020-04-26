@@ -8,8 +8,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Block } from "galio-framework";
 
 // screens
-import Acasa from "../screens/Acasa";
-import Onboarding from "../screens/Onboarding";
+import Acasa from "../screens/Acasa"
 import Pro from "../screens/Pro";
 import Autentificare from "../screens/Autentificare";
 import Profil from "../screens/Profil";
@@ -177,20 +176,6 @@ function AcasaStack(props) {
   );
 }
 
- function OnboardingStack(props) {
-  return (
-    <Stack.Navigator mode="card" headerMode="none">
-      <Stack.Screen
-        name="Onboarding"
-        component={Onboarding}
-        option={{
-          headerTransparent: true
-        }}
-      />
-      <Stack.Screen name="App" component={AppStack} />
-    </Stack.Navigator>
-  );
-}
 
 export default function AppStack(props) {
   return (
@@ -204,7 +189,7 @@ export default function AppStack(props) {
       drawerContentOptions={{
         activeTintcolor: "white",
         inactiveTintColor: "#000",
-        activeBackgroundColor: "transparent",
+        activeBackgroundColor: "transparent", 
         itemStyle: {
           width: width * 0.75,
           backgroundColor: "transparent",
