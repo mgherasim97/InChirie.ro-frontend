@@ -177,7 +177,7 @@ function AcasaStack(props) {
   );
 }
 
-export default function OnboardingStack(props) {
+ function OnboardingStack(props) {
   return (
     <Stack.Navigator mode="card" headerMode="none">
       <Stack.Screen
@@ -192,7 +192,7 @@ export default function OnboardingStack(props) {
   );
 }
 
-function AppStack(props) {
+export default function AppStack(props) {
   return (
     <Drawer.Navigator
       style={{ flex: 1 }}
