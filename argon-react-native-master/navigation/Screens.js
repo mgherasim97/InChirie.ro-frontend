@@ -11,6 +11,7 @@ import { Block } from "galio-framework";
 import Acasa from "../screens/Acasa"
 import Pro from "../screens/Pro";
 import Autentificare from "../screens/Autentificare";
+import Inregistrare from "../screens/Inregistrare";
 import Profil from "../screens/Profil";
 import Elements from "../screens/Elements";
 import Anunturi from "../screens/Anunturi";
@@ -211,6 +212,7 @@ export default function AppStack(props) {
       <Drawer.Screen name="Acasa" component={AcasaStack} />
       <Drawer.Screen name="Profil" component={ProfilStack} />
       <Drawer.Screen name="Autentificare" component={Autentificare} />
+      <Drawer.Screen name="Inregistrare" component={Inregistrare} />
       <Drawer.Screen name="Elements" component={ElementsStack} />
       <Drawer.Screen name="Anunturi" component={AnunturiStack} />
     </Drawer.Navigator>

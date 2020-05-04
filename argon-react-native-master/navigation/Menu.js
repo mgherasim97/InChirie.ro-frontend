@@ -16,6 +16,7 @@ function CustomDrawerContent({ drawerPosition, navigation, profile, focused, sta
     "Acasa", 
     "Profil",
     "Autentificare",
+    "Inregistrare",
     "Elements",
     "Anunturi",
   ];

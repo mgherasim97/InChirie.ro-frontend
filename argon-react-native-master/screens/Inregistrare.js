@@ -10,11 +10,57 @@ import { Block, Checkbox, Text, theme } from "galio-framework";
 
 import { Button, Icon, Input } from "../components";
 import { Images, argonTheme } from "../constants";
+import deviceStorage from '../services/deviceStorage'; 
+import axios from 'axios';
+import qs from "qs";
 
 const { width, height } = Dimensions.get("screen");
-import axios from 'axios';
 
-class Autentificare extends React.Component {
+class Inregistrare extends React.Component {
+
+  constructor(props){ 
+    super();
+    this.registerUser = this.registerUser.bind(this);
+  }
+
+  
+  registerUser() {
+  console.log("frumos");  
+  //const { lastName, firstName, email, phoneNumber, password } = this.state;
+  console.log("frumos"); 
+  this.setState({ error: '', loading: true });
+  
+  
+  const params = {
+            name: "User",
+            startTime: "2:00PM",
+            endTime: "3:00PM",
+            status: "pending",
+            invitation: "test",
+            
+           };
+  
+  axios.post("/user/register",
+  // {
+  //     user: {
+  //       lastName: lastName,
+  //       firstName: firstName,
+  //       email: email,
+  //       phoneNumber: phoneNumber,
+  //       password: password
+  //     }
+  //   }
+    qs.stringify(params)
+    ,)
+    .then((response) => {
+      console.log(response);
+      //deviceStorage.saveItem("cheie_frumoasa", response.data.jwt);
+    })
+    .catch((error) => {
+       console.log(error);
+    });
+    }
+
   render() {
     return (
       <Block flex middle>
@@ -29,7 +75,7 @@ class Autentificare extends React.Component {
               <Block flex>
                 <Block flex={0.17} middle>
                   <Text color="#8898AA" size={25}>
-                    Autentifică-te
+                   Inregistreaza-te
                   </Text>
                 </Block>
                 <Block flex center>
@@ -56,7 +102,37 @@ class Autentificare extends React.Component {
                     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                       <Input
                         borderless
+                        placeholder="Prenume"
+                        iconContent={
+                          <Icon
+                            size={16}
+                            color={argonTheme.COLORS.ICON}
+                            name="hat-3"
+                            family="ArgonExtra"
+                            style={styles.inputIcons}
+                          />
+                        }
+                      />
+                    </Block>
+                    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+                      <Input
+                        borderless
                         placeholder="Email"
+                        iconContent={
+                          <Icon
+                            size={16}
+                            color={argonTheme.COLORS.ICON}
+                            name="hat-3"
+                            family="ArgonExtra"
+                            style={styles.inputIcons}
+                          />
+                        }
+                      />
+                    </Block>
+                    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+                      <Input
+                        borderless
+                        placeholder="Telefon"
                         iconContent={
                           <Icon
                             size={16}
@@ -107,6 +183,7 @@ class Autentificare extends React.Component {
                         textStyle={{
                           color: argonTheme.COLORS.PRIMARY,
                           fontSize: 14
+                        
                         }}
                       >
                         Termenele și condițiile
@@ -114,7 +191,7 @@ class Autentificare extends React.Component {
                       
                     </Block>
                     <Block middle>
-                      <Button color="primary" style={styles.createButton}>
+                      <Button color="primary" style={styles.createButton} onPress={this.registerUser}>
                         <Text bold size={14} color={argonTheme.COLORS.WHITE}>
                           CREEAZĂ CONT
                         </Text>
@@ -184,4 +261,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Autentificare;
+export default Inregistrare;

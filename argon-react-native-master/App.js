@@ -40,12 +40,38 @@ function cacheImages(images) {
 }
 
 export default class App extends React.Component {
+
   state = {
     isLoadingComplete: false
   };
 
+  constructor() {
+    super();
+    // anytime there is data that is going to change
+    // within a component, state can be used.
+
+    // User interaction with components are good examples of
+    // how state works. Clicking buttons, checkboxes, filling 
+    // forms, etc. are examples of user interaction where 
+    // state can be used within the component.
+
+    this.state = {
+      jwt: '',
+      loading: true
+    }
+    
+    this.newJWT = this.newJWT.bind(this);
+  }
+
+  newJWT(jwt){
+    this.setState({
+      jwt: jwt
+    });
+  }  
+
+
   render() {
-    if (!this.state.isLoadingComplete) {
+    if (!this.state.isLoadingComplete && !this.state.jwt) {
       console.log("----")
       return (
         <AppLoading
