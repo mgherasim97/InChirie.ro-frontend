@@ -1,65 +1,76 @@
 import React from 'react';
-import { ImageBackground, Image, StyleSheet, StatusBar, Dimensions, Platform, Linking } from 'react-native';
+import { ImageBackground, Image, StyleSheet, StatusBar, Dimensions, Platform, Linking, View} from 'react-native';
 import { Block, Button, Text, theme } from 'galio-framework';
 
 const { height, width } = Dimensions.get('screen');
 import { Images, argonTheme } from '../constants/';
 import { HeaderHeight } from "../constants/utils";
 
+import  {useRef} from 'react';
+import Carousel from 'react-native-anchor-carousel';
+
+const data = [
+  {
+    uri: 'https://i.imgur.com/GImvG4q.jpg',
+    title: 'Lorem ipsum dolor sit amet',
+    content: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...'
+  },
+  {
+    uri: 'https://i.imgur.com/Pz2WYAc.jpg',
+    title: 'Lorem ipsum ',
+    content: 'Neque porro quisquam est qui dolorem ipsum '
+  },
+  {
+    uri: 'https://i.imgur.com/IGRuEAa.jpg',
+    title: 'Lorem ipsum dolor',
+    content: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...'
+  },
+  {
+    uri: 'https://i.imgur.com/fRGHItn.jpg',
+    title: 'Lorem ipsum dolor',
+    content: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet'
+  },
+  {
+    uri: 'https://i.imgur.com/WmenvXr.jpg',
+    title: 'Lorem ipsum ',
+    content: 'Neque porro quisquam est qui dolorem ipsum quia dolor '
+  }
+];
+
 export default class Pro extends React.Component {
   render() {
     const { navigation } = this.props;
-
+    
+renderItem = ({item, index}) => {
+        const {backgroundColor} = item;
+        return (
+            <TouchableOpacity style={[styles.item, {backgroundColor}]}
+                              onPress={() => {
+                                  this._carousel.scrollToIndex(index);
+                              }}>
+             ....
+            </TouchableOpacity>)
+    };
+ 
     return (
-      <Block flex style={styles.container}>
-        <StatusBar barStyle="light-content" />
-        <Block flex>
-          <ImageBackground
-            source={Images.Pro}
-            style={{ flex: 1, height: height, width, zIndex: 1 }}
-          />
-          <Block space="between" style={styles.padded}>
-            <Block>
-              <Block>
-                <Image source={Images.ArgonLogo}
-                  style={{ marginBottom: theme.SIZES.BASE * 1.5 }}/>
-              </Block>
-              <Block >
-                <Block>
-                  <Text color="white" size={60}>Argon</Text>
-                </Block>
-                <Block>
-                  <Text color="white" size={60}>Design</Text>
-                </Block>
-                <Block row>
-                  <Text color="white" size={60}>System</Text>
-                  <Block middle style={styles.pro}>
-                    <Text size={16} color="white">PRO</Text>
-                  </Block>
-                </Block>
-              </Block>
-              <Text size={16} color='rgba(255,255,255,0.6)' style={{ marginTop: 35 }}>
-                Take advantage of all the features and screens made upon Galio Design System, coded on React Native for both.
-              </Text>
-              <Block row style={{ marginTop: theme.SIZES.BASE * 1.5, marginBottom: theme.SIZES.BASE * 4 }}>
-                <Image
-                  source={Images.iOSLogo}
-                  style={{ height: 38, width: 82, marginRight: theme.SIZES.BASE * 1.5 }} />
-                <Image
-                  source={Images.androidLogo}
-                  style={{ height: 38, width: 140 }} />
-              </Block>
-              <Button
-                shadowless
-                style={styles.button}
-                color={argonTheme.COLORS.INFO}
-                onPress={() => Linking.openURL('https://www.creative-tim.com/product/argon-pro-react-native').catch((err) => console.error('An error occurred', err))}>
-                <Text bold color={theme.COLORS.WHITE}>BUY NOW</Text>
-              </Button>
-            </Block>
-          </Block>
-        </Block>
-      </Block>
+   
+
+  <View style={styles.carouselContainer}>
+     <Carousel  style={styles.carousel}
+                data={data}
+                renderItem={this.renderItem}
+                itemWidth={200}
+                containerWidth={width - 20} 
+                separatorWidth={0}
+                ref={(c) => {
+                    this._carousel = c;
+                }}
+	            //pagingEnable={false}
+	            //minScrollDistance={20}
+            />
+    </View>
+     
+      
     );
   }
 }
@@ -97,4 +108,10 @@ const styles = StyleSheet.create({
     right: 0,
     height: 66,
   },
+   carouselContainer: {
+		    height:200  
+		},
+   carousel: {
+	            flex:1
+		} 
 });
