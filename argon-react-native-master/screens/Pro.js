@@ -48,7 +48,7 @@ renderItem = ({item, index}) => {
                               onPress={() => {
                                   this._carousel.scrollToIndex(index);
                               }}>
-             ....
+             
             </TouchableOpacity>)
     };
  
