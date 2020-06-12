@@ -1,0 +1,57 @@
+const params = {
+            title: "",
+            price: "",
+            rooms: "",
+            totalArea: "",
+            usableArea: "",
+            orientation: "",
+            year: "",   
+            floors: "",
+            floorsBuilding:"",
+            propertyType:"",
+            location: "",  
+            errors: {},          // Store error data from the backend here 
+            isAuthorized: false, // If auth is successful, set this to `true`
+            isLoading: false,    // Set this to `true` if You want to show spinner
+            
+           };
+onLastTitleChange = title => {
+    this.setState({title});
+  };
+
+  onPriceChange = price => {
+    this.setState({price});
+  };
+
+  onRoomsChange = rooms => {
+    this.setState({rooms});
+  };
+
+  onTotalAreaChange = totalArea => {
+    this.setState({totalArea});
+  };
+
+  onUsableAreaChange = usableArea => {
+    this.setState({usableArea});
+  };
+
+  onOrientationChange = orientation => {
+    this.setState({orientation});
+  };
+
+  onYearChange = year => {
+    this.setState({year});
+  };
+  
+  onFloorChange = floor => {
+    this.setState({floor});
+  };
+
+  onFloorsBuildingChange = floorsBuilding => {
+    this.setState({floorsBuilding});
+  };
+
+  onLocationChange = location => {
+    this.setState({location});
+  };
+  

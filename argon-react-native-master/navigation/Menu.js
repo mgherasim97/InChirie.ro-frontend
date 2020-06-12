@@ -12,13 +12,16 @@ import { DrawerItem as DrawerCustomItem } from '../components';
 
 function CustomDrawerContent({ drawerPosition, navigation, profile, focused, state, ...rest }) {
   const insets = useSafeArea();
-  const screens = [
+  const screens = [ //DE AICI SCHIMBAM ORIDINEA IN CARE APAR
     "Acasa", 
     "Profil",
     "Autentificare",
     "Inregistrare",
+    "AdaugaApartament",
     "Elements",
     "Anunturi",
+    
+
   ];
   return (
     <Block

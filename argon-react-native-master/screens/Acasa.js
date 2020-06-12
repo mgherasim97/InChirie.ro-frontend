@@ -16,6 +16,11 @@ class Acasa extends React.Component {
           <Card item={articles[0]} horizontal  />
           <Card item={articles[1]} horizontal  />
           <Card item={articles[2]} horizontal  />
+          <Card item={articles[3]} horizontal  />
+          <Card item={articles[4]} horizontal  />
+          <Card item={articles[5]} horizontal  />
+          <Card item={articles[6]} horizontal  />
+          <Card item={articles[7]} horizontal  />
           {/* <Block flex row>
             <Card item={articles[1]} style={{ marginRight: theme.SIZES.BASE }} />
             <Card item={articles[2]} />

@@ -30,7 +30,10 @@ class Card extends React.Component {
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback onPress={() => navigation.navigate('Pro')}>
           <Block flex space="between" style={styles.cardDescription}>
-            <Text size={14} style={styles.cardTitle}>{item.title}</Text>
+            <Text size={16} style={styles.cardTitle}>{item.title}</Text>
+            <Text size={14} style={styles.cardTitle} muted={!ctaColor} color={ctaColor || argonTheme.COLORS.SUCCESS} bold>{item.disponibil}</Text>
+            <Text size={14} style={styles.cardTitle}>{item.pret} euro</Text>
+            <Text size={14} style={styles.cardTitle}>{item.location}</Text>
             <Text size={12} muted={!ctaColor} color={ctaColor || argonTheme.COLORS.ACTIVE} bold>{item.cta}</Text>
           </Block>
         </TouchableWithoutFeedback>

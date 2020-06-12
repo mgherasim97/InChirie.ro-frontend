@@ -4,7 +4,8 @@ import {
   ImageBackground,
   Dimensions,
   StatusBar,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
+  ScrollView
 } from "react-native";
 import { Block, Checkbox, Text, theme } from "galio-framework";
 
@@ -19,15 +20,20 @@ import APIKit, {setClientToken} from '../share/APIKit';
 
 const { width, height } = Dimensions.get("screen");
 
-
+// 11 parametrii de trimis, primit
 const params = {
-            lastName: "",
-            firstName: "",
-            email: "",
-            phoneNumber: "",
-            password: "",
-            password2: "",
-            errors: {},          // Store error data from the backend here
+            title: "",
+            price: "",
+            rooms: "",
+            totalArea: "",
+            usableArea: "",
+            orientation: "",
+            year: "",   
+            floors: "",
+            floorsBuilding:"",
+            propertyType:"",
+            location: "",  
+            errors: {},          // Store error data from the backend here 
             isAuthorized: false, // If auth is successful, set this to `true`
             isLoading: false,    // Set this to `true` if You want to show spinner
             
@@ -40,47 +46,62 @@ const params = {
 // Whenever user presses login we will fire registerUser(...)
 // When data from backend arrives we will have to either call onSuccess or onFailure inside our registerUser(...) method
 
-class Inregistrare extends React.Component {
+class AdaugaApartament extends React.Component {
 
   constructor(props){ 
     super();
-    this.registerUser = this.registerUser.bind(this);
+    this.registerApartment = this.registerApartment.bind(this);
   }
 
   state = params;
 
   componentWillUnmount() {}
 
-  onLastNameChange = lastName => {
-    this.setState({lastName});
+  onLastTitleChange = title => {
+    this.setState({title});
   };
 
-  onFirstNameChange = firstName => {
-    this.setState({firstName});
+  onPriceChange = price => {
+    this.setState({price});
   };
 
-  onEmailChange = email => {
-    this.setState({email});
+  onRoomsChange = rooms => {
+    this.setState({rooms});
   };
 
-  onPhoneNumberChange = phoneNumber => {
-    this.setState({phoneNumber});
+  onTotalAreaChange = totalArea => {
+    this.setState({totalArea});
   };
 
-  onPasswordChange = password => {
-    this.setState({password});
+  onUsableAreaChange = usableArea => {
+    this.setState({usableArea});
   };
 
-  onPassword2Change = password2 => {
-    this.setState({password2});
+  onOrientationChange = orientation => {
+    this.setState({orientation});
+  };
+
+  onYearChange = year => {
+    this.setState({year});
   };
   
-  registerUser() {
+  onFloorChange = floor => {
+    this.setState({floor});
+  };
 
+  onFloorsBuildingChange = floorsBuilding => {
+    this.setState({floorsBuilding});
+  };
+
+  onLocationChange = location => {
+    this.setState({location});
+  };
+  
+  registerApartment() {
   this.setState({ error: '', loading: true });
-  const {lastName, firstName, email, phoneNumber, password, password2} = this.state;
-  const payload = {lastName, firstName, email, phoneNumber, password, password2};
-  console.log(payload); //aici verific ca s-au trimis 
+  const {title, price, rooms, totalArea, usableArea, orientation, year, floor, floorsBuilding, location} = this.state;
+  const payload = {title, price, rooms, totalArea, usableArea, orientation, year, floor, floorsBuilding, location};
+  console.log(payload); //aici verific ca s-au trimis
   
   axios.post("aa18zid7pceb5bt.c879gvy4bjgb.eu-west-2.rds.amazonaws.com:3306/user/register",
     qs.stringify(payload) //asta e ce trimitem
@@ -102,13 +123,15 @@ class Inregistrare extends React.Component {
           source={Images.RegisterBackground}
           style={{ width, height, zIndex: 1 }}
         >
+          
           <Block flex middle>
             <Block style={styles.registerContainer}>
-              
+             
               <Block flex>
+                 <ScrollView>
                 <Block flex={0.17} middle>
                   <Text color="#8898AA" size={25}>
-                   Inregistreaza-te
+                   Adauga un apartament
                   </Text>
                 </Block>
                 <Block flex center>
@@ -117,12 +140,13 @@ class Inregistrare extends React.Component {
                     behavior="padding"
                     enabled
                   >
+
                     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                       <Input
-                        onChangeText={this.onLastNameChange}
-                        value={this.state.lastName}
+                        onChangeText={this.onLastTitleChange}
+                        value={this.state.title}
                         borderless
-                        placeholder="Nume"
+                        placeholder="Titluu apartament "
                         iconContent={
                           <Icon
                             size={16}
@@ -134,12 +158,14 @@ class Inregistrare extends React.Component {
                         }
                       />
                     </Block>
+
+
                     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                       <Input
-                        onChangeText={this.onFirstNameChange}
-                        value={this.state.firstName}
+                        onChangeText={this.onPriceChange}
+                        value={this.state.price}
                         borderless
-                        placeholder="Prenume"
+                        placeholder="Pret"
                         iconContent={
                           <Icon
                             size={16}
@@ -151,12 +177,13 @@ class Inregistrare extends React.Component {
                         }
                       />
                     </Block>
+
                     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                       <Input
-                        onChangeText={this.onEmailChange}
-                        value={this.state.email}
+                        onChangeText={this.onRoomsChange}
+                        value={this.state.rooms}
                         borderless
-                        placeholder="Email"
+                        placeholder="Rooms"
                         iconContent={
                           <Icon
                             size={16}
@@ -168,12 +195,13 @@ class Inregistrare extends React.Component {
                         }
                       />
                     </Block>
+
                     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                       <Input
-                        onChangeText={this.onPhoneNumberChange}  
-                        value={this.state.telefon}
+                        onChangeText={this.onTotalAreaChange}  
+                        value={this.state.totalArea}
                         borderless
-                        placeholder="Telefon"
+                        placeholder="totalArea"
                         iconContent={
                           <Icon
                             size={16}
@@ -188,11 +216,11 @@ class Inregistrare extends React.Component {
 
                     <Block width={width * 0.8}>
                       <Input
-                        onChangeText={this.onPasswordChange}
-                        value={this.state.parola}
+                        onChangeText={this.onUsableAreaChange}
+                        value={this.state.usableArea}
                         password
                         borderless
-                        placeholder="Parolă"
+                        placeholder="usableArea"
                         iconContent={
                           <Icon
                             size={16}
@@ -204,13 +232,14 @@ class Inregistrare extends React.Component {
                         }
                       />
                     </Block>
+
                     <Block width={width * 0.8}>
                       <Input
-                        onChangeText={this.onPassword2Change}
-                        value={this.state.parola2}
+                        onChangeText={this.onOrientationChange}
+                        value={this.state.orientation}
                         password
                         borderless
-                        placeholder="Confirmare parolă"
+                        placeholder="orientation"
                         iconContent={
                           <Icon
                             size={16}
@@ -221,17 +250,87 @@ class Inregistrare extends React.Component {
                           />
                         }
                       />
-                      
-                      <Block row style={styles.passwordCheck}>
-                        <Text size={12} color={argonTheme.COLORS.MUTED}>
-                          Puterea parolei:
-                        </Text>
-                        <Text bold size={12} color={argonTheme.COLORS.SUCCESS}>
-                          {" "}
-                          Hoo, calmează-te că n-o ții minte!
-                        </Text>
-                      </Block>
                     </Block>
+
+                    <Block width={width * 0.8}>
+                      <Input
+                        onChangeText={this.onYearChange}
+                        value={this.state.year}
+                        password
+                        borderless
+                        placeholder="year"
+                        iconContent={
+                          <Icon
+                            size={16}
+                            color={argonTheme.COLORS.ICON}
+                            name="padlock-unlocked"
+                            family="ArgonExtra"
+                            style={styles.inputIcons}
+                          />
+                        }
+                      />
+                    </Block>
+
+                    <Block width={width * 0.8}>
+                      <Input
+                        onChangeText={this.onFloorChange}
+                        value={this.state.floor}
+                        password
+                        borderless
+                        placeholder="floor"
+                        iconContent={
+                          <Icon
+                            size={16}
+                            color={argonTheme.COLORS.ICON}
+                            name="padlock-unlocked"
+                            family="ArgonExtra"
+                            style={styles.inputIcons}
+                          />
+                        }
+                      />
+                    </Block>
+
+                    <Block width={width * 0.8}>
+                      <Input
+                        onChangeText={this.onFloorsBuildingChange}
+                        value={this.state.floorsBuilding}
+                        password
+                        borderless
+                        placeholder="floorsBuilding"
+                        iconContent={
+                          <Icon
+                            size={16}
+                            color={argonTheme.COLORS.ICON}
+                            name="padlock-unlocked"
+                            family="ArgonExtra"
+                            style={styles.inputIcons}
+                          />
+                        }
+                      />
+                    </Block>
+
+                    <Block width={width * 0.8}>
+                      <Input
+                        onChangeText={this.onLocationChange}
+                        value={this.state.location}
+                        password
+                        borderless
+                        placeholder="location"
+                        iconContent={
+                          <Icon
+                            size={16}
+                            color={argonTheme.COLORS.ICON}
+                            name="padlock-unlocked"
+                            family="ArgonExtra"
+                            style={styles.inputIcons}
+                          />
+                        }
+                      />
+                    </Block>
+
+                   
+                    {/* </Block> */}
+
                     <Block row width={width * 0.75}>
                       <Checkbox
                         checkboxStyle={{
@@ -253,18 +352,24 @@ class Inregistrare extends React.Component {
                       </Button>
                       
                     </Block>
+
                     <Block middle>
-                      <Button color="primary" style={styles.createButton} onPress={this.registerUser}>
+                      <Button color="primary" style={styles.createButton} onPress={this.registerApartment}>
                         <Text bold size={14} color={argonTheme.COLORS.WHITE}>
-                          CREEAZĂ CONT
+                          ADAUGA PROPRIETATEA
                         </Text>
                       </Button>
                     </Block>
                   </KeyboardAvoidingView>
                 </Block>
+                </ScrollView>
               </Block>
+              
             </Block>
+            
+          
           </Block>
+          
         </ImageBackground>
       </Block>
     );
@@ -324,4 +429,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Inregistrare;
+export default AdaugaApartament;

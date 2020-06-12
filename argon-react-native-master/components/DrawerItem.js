@@ -64,6 +64,15 @@ class DrawerItem extends React.Component {
             color={focused ? "white" : argonTheme.COLORS.INFO}
           />
         );
+        case "AdaugaApartament":
+        return (
+          <Icon
+            name="spaceship"
+            family="ArgonExtra"
+            size={14}
+            color={focused ? "white" : argonTheme.COLORS.PRIMARY}
+          />
+        );
       case "Getting Started":
         return (<Icon
           name="spaceship"
@@ -92,7 +101,7 @@ class DrawerItem extends React.Component {
         onPress={() =>
           title == "Getting Started"
             ? Linking.openURL(
-                "https://demos.creative-tim.com/argon-pro-react-native/docs/"
+                ""
               ).catch(err => console.error("An error occurred", err))
             : navigation.navigate(title)
         }

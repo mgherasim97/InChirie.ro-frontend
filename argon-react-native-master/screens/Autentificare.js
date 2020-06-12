@@ -13,8 +13,63 @@ import { Images, argonTheme } from "../constants";
 
 const { width, height } = Dimensions.get("screen");
 import axios from 'axios';
+import qs from "qs";
+import Spinner from 'react-native-loading-spinner-overlay';
+
+import APIKit, {setClientToken} from '../share/APIKit';
+
+const params = {
+            lastName: "",
+            email: "",
+            password: "",
+            errors: {},          // Store error data from the backend here
+            isAuthorized: false, // If auth is successful, set this to `true`
+            isLoading: false,    // Set this to `true` if You want to show spinner
+            
+           };
 
 class Autentificare extends React.Component {
+
+    constructor(props){ 
+    super();
+    this.authUser = this.authUser.bind(this);
+  }
+
+  state = params;
+
+  componentWillUnmount() {}
+
+  onLastNameChange = lastName => {
+    this.setState({lastName});
+  };
+
+  onEmailChange = email => {
+    this.setState({email});
+  };
+
+  onPasswordChange = password => {
+    this.setState({password});
+  };
+  
+  authUser() {
+
+  this.setState({ error: '', loading: true });
+  const {lastName, email, password} = this.state;
+  const payload = {lastName, email, password};
+  console.log(payload); //aici verific ca s-au trimis 
+  
+  axios.post("aa18zid7pceb5bt.c879gvy4bjgb.eu-west-2.rds.amazonaws.com:3306/user/login",
+    qs.stringify(payload) //asta e ce trimitem
+    ,)
+    .then((response) => {
+      console.log(response);
+      //deviceStorage.saveItem("cheie_frumoasa", response.data.jwt);
+    })
+    .catch((error) => {
+       console.log(error);
+    });
+
+  }
   render() {
     return (
       <Block flex middle>
@@ -40,6 +95,8 @@ class Autentificare extends React.Component {
                   >
                     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                       <Input
+                        onChangeText={this.onLastNameChange}
+                        value={this.state.lastName}
                         borderless
                         placeholder="Nume"
                         iconContent={
@@ -55,6 +112,8 @@ class Autentificare extends React.Component {
                     </Block>
                     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                       <Input
+                        onChangeText={this.onEmailChange}
+                        value={this.state.email}
                         borderless
                         placeholder="Email"
                         iconContent={
@@ -70,6 +129,8 @@ class Autentificare extends React.Component {
                     </Block>
                     <Block width={width * 0.8}>
                       <Input
+                        onChangeText={this.onPasswordChange}
+                        value={this.state.parola}
                         password
                         borderless
                         placeholder="Parolă"

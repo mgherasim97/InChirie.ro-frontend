@@ -15,6 +15,7 @@ import Inregistrare from "../screens/Inregistrare";
 import Profil from "../screens/Profil";
 import Elements from "../screens/Elements";
 import Anunturi from "../screens/Anunturi";
+import AdaugaApartament from "../screens/AdaugaApartament";
 // drawer
 import CustomDrawerContent from "./Menu";
 
@@ -41,7 +42,7 @@ function ElementsStack(props) {
           cardStyle: { backgroundColor: "#F8F9FE" }
         }}
       />
-            <Stack.Screen
+      <Stack.Screen
         name="Pro"
         component={Pro}
         options={{
@@ -177,7 +178,46 @@ function AcasaStack(props) {
   );
 }
 
-
+function AdaugaApartamentStack(props) {
+  return (
+    <Stack.Navigator initialRouteName="Profil" mode="card" headerMode="screen">
+      <Stack.Screen
+        name="AdaugaApartament"
+        component={AdaugaApartament}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              transparent
+              white
+              title="AdaugaApartament"
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
+          cardStyle: { backgroundColor: "#FFFFFF" },
+          headerTransparent: true
+        }}
+      />
+            <Stack.Screen
+        name="Pro"
+        component={Pro}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              title=""
+              back
+              white
+              transparent
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
+          headerTransparent: true
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
 export default function AppStack(props) {
   return (
     <Drawer.Navigator
@@ -213,8 +253,10 @@ export default function AppStack(props) {
       <Drawer.Screen name="Profil" component={ProfilStack} />
       <Drawer.Screen name="Autentificare" component={Autentificare} />
       <Drawer.Screen name="Inregistrare" component={Inregistrare} />
+      <Drawer.Screen name="AdaugaApartament" component={AdaugaApartamentStack} />
       <Drawer.Screen name="Elements" component={ElementsStack} />
       <Drawer.Screen name="Anunturi" component={AnunturiStack} />
+      
     </Drawer.Navigator>
   );
 }
