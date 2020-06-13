@@ -4,7 +4,8 @@ import {
   ImageBackground,
   Dimensions,
   StatusBar,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
+  ScrollView
 } from "react-native";
 import { Block, Checkbox, Text, theme } from "galio-framework";
 
@@ -75,24 +76,55 @@ class Inregistrare extends React.Component {
     this.setState({password2});
   };
   
-  registerUser() {
 
+  registerUser() {
+  
   this.setState({ error: '', loading: true });
   const {lastName, firstName, email, phoneNumber, password, password2} = this.state;
   const payload = {lastName, firstName, email, phoneNumber, password, password2};
   console.log(payload); //aici verific ca s-au trimis 
   
-  axios.post("aa18zid7pceb5bt.c879gvy4bjgb.eu-west-2.rds.amazonaws.com:3306/user/register",
-    qs.stringify(payload) //asta e ce trimitem
+  const onSuccess = ({data}) => {
+    this.setState({isLoading: false, isAuthorized: true});
+  };
+
+  const onFailure = error => {
+      console.log(error && error.response);
+      this.setState({errors: error.response.data, isLoading: false});
+  };
+
+  axios.post("http://localhost:8080/user/register",
+    JSON.stringify(payload) //asta e ce trimitem
     ,)
     .then((response) => {
       console.log(response);
+      console.log("e bine")
       //deviceStorage.saveItem("cheie_frumoasa", response.data.jwt);
     })
     .catch((error) => {
+      if(response == 'undefined') {console.log("ba e undefined")}
+      
        console.log(error);
+       console.log("eroare");
+       onFailure();
     });
     }
+  //  axios.get("http://localhost:8080/user/welcome",
+  //   payload //asta e ce trimitem
+  //   ,)
+  //   .then((response) => {
+  //     console.log(response);
+  //     console.log("e bine")
+  //     //deviceStorage.saveItem("cheie_frumoasa", response.data.jwt);
+  //     return response;
+  //   })
+  //   .catch((error) => {
+  //      console.log(error);
+  //      console.log("eroare")
+       
+  //      return error;
+  //   });
+  //   }
 
   render() {
     return (
@@ -106,6 +138,7 @@ class Inregistrare extends React.Component {
             <Block style={styles.registerContainer}>
               
               <Block flex>
+               <ScrollView>
                 <Block flex={0.17} middle>
                   <Text color="#8898AA" size={25}>
                    Inregistreaza-te
@@ -262,6 +295,7 @@ class Inregistrare extends React.Component {
                     </Block>
                   </KeyboardAvoidingView>
                 </Block>
+                </ScrollView>
               </Block>
             </Block>
           </Block>

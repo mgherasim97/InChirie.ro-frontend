@@ -67,17 +67,19 @@ class Autentificare extends React.Component {
       this.setState({errors: error.response.data, isLoading: false});
   };
 
-  axios.post("http://192.168.5.13:8087/user/login",
+  axios.post("localhost:8080/user/login",
     qs.stringify(payload) //asta e ce trimitem
     ,)
     .then((response) => {
       console.log(response);
       console.log(lalal);
+      onSuccess();
       //deviceStorage.saveItem("cheie_frumoasa", response.data.jwt);
     })
     .catch((error) => {
        console.log(error);
        console.log(lalal);
+       onFailure();
     });
 
   }
