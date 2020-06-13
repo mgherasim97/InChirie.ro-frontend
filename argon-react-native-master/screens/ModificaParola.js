@@ -19,7 +19,7 @@ import Spinner from 'react-native-loading-spinner-overlay';
 import APIKit, {setClientToken} from '../share/APIKit';
 
 const params = {
-            lastName: "",
+
             email: "",
             password: "",
             errors: {},          // Store error data from the backend here
@@ -28,7 +28,7 @@ const params = {
             
            };
 
-class Autentificare extends React.Component {
+class ModificaParola extends React.Component {
 
     constructor(props){ 
     super();
@@ -38,10 +38,6 @@ class Autentificare extends React.Component {
   state = params;
 
   componentWillUnmount() {}
-
-  onLastNameChange = lastName => {
-    this.setState({lastName});
-  };
 
   onEmailChange = email => {
     this.setState({email});
@@ -101,7 +97,7 @@ class Autentificare extends React.Component {
               <Block flex>
                 <Block flex={0.17} middle>
                   <Text color="#8898AA" size={25}>
-                    Autentifică-te
+                    Schimba parola
                   </Text>
                 </Block>
                 <Block flex center>
@@ -110,25 +106,8 @@ class Autentificare extends React.Component {
                     behavior="padding"
                     enabled
                   >
-                    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
-                      <Input
-                        onChangeText={this.onLastNameChange}
-                        value={this.state.lastName}
-                        borderless
-                        placeholder="Nume"
-                        autoCapitalize="none"
-                        autoCorrect={false}
-                        iconContent={
-                          <Icon
-                            size={16}
-                            color={argonTheme.COLORS.ICON}
-                            name="hat-3"
-                            family="ArgonExtra"
-                            style={styles.inputIcons}
-                          />
-                        }
-                      />
-                    </Block>
+                    
+                    
                     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                       <Input
                         onChangeText={this.onEmailChange}
@@ -202,7 +181,7 @@ class Autentificare extends React.Component {
                     <Block middle>
                       <Button color="primary" style={styles.createButton} onPress={this.authUser}>
                         <Text bold size={14} color={argonTheme.COLORS.WHITE}>
-                          CREEAZĂ CONT
+                          SCHIMBA PAROLA
                         </Text>
                       </Button>
                     </Block>
@@ -270,4 +249,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Autentificare;
+export default ModificaParola;

@@ -17,15 +17,29 @@ const { width, height } = Dimensions.get("screen");
 
 const thumbMeasure = (width - 48 - 32) / 3;
 
+const params = {
+            lastName: "",
+            email: "",
+            password: "",
+            errors: {},          // Store error data from the backend here
+            isAuthorized: false, // If auth is successful, set this to `true`
+            isLoading: false,    // Set this to `true` if You want to show spinner
+            
+           };
+
+
 class Profile extends React.Component {
+  
   render() {
+    const { navigation } = this.props;
     return (
       <Block flex style={styles.profile}>
         <Block flex>
           <ImageBackground
             source={Images.ProfileBackground}
-            style={styles.profileContainer}
-            imageStyle={styles.profileBackground}
+            // style={styles.profileContainer}
+            style={{ width, height, zIndex: 1 }}
+            // imageStyle={styles.profileBackground}
           >
             <ScrollView
               showsVerticalScrollIndicator={false}
@@ -47,13 +61,13 @@ class Profile extends React.Component {
                   >
                     <Button
                       small
-                      style={{ backgroundColor: argonTheme.COLORS.INFO }}
+                      style={{ backgroundColor: argonTheme.COLORS.BLACK }}
                     >
                       CONNECT
                     </Button>
                     <Button
                       small
-                      style={{ backgroundColor: argonTheme.COLORS.DEFAULT }}
+                      style={{ backgroundColor: argonTheme.COLORS.PRIMARY }}
                     >
                       MESSAGE
                     </Button>
@@ -66,9 +80,9 @@ class Profile extends React.Component {
                         color="#525F7F"
                         style={{ marginBottom: 4 }}
                       >
-                        2K
+                        2
                       </Text>
-                      <Text size={12} color={argonTheme.COLORS.TEXT}>Orders</Text>
+                      <Text size={12} color={argonTheme.COLORS.TEXT}>Postari</Text>
                     </Block>
                     <Block middle>
                       <Text
@@ -79,7 +93,7 @@ class Profile extends React.Component {
                       >
                         10
                       </Text>
-                      <Text size={12} color={argonTheme.COLORS.TEXT}>Photos</Text>
+                      <Text size={12} color={argonTheme.COLORS.TEXT}>Vizionari</Text>
                     </Block>
                     <Block middle>
                       <Text
@@ -90,7 +104,7 @@ class Profile extends React.Component {
                       >
                         89
                       </Text>
-                      <Text size={12} color={argonTheme.COLORS.TEXT}>Comments</Text>
+                      <Text size={12} color={argonTheme.COLORS.TEXT}>Comentarii</Text>
                     </Block>
                   </Block>
                 </Block>
@@ -114,16 +128,34 @@ class Profile extends React.Component {
                     >
                       An artist of considerable range, Jessica name taken by
                       Melbourne …
+
                     </Text>
+
                     <Button
+                      onPress={() => navigation.navigate('ModificaDateUser')}
                       color="transparent"
+                      style={{ backgroundColor: argonTheme.COLORS.PRIMARY }}
+                      medium
                       textStyle={{
-                        color: "#233DD2",
+                        color: "#FFFFFF",
                         fontWeight: "500",
-                        fontSize: 16
+                        fontSize: 19
                       }}
                     >
-                      Show more
+                      Modifica datele
+                    </Button>
+                    <Button
+                      onPress={() => navigation.navigate('ModificaParola')}
+                      color="transparent"
+                      style={{ backgroundColor: argonTheme.COLORS.BLACK }}
+                      medium
+                      textStyle={{
+                        color: "#FFFFFF",
+                        fontWeight: "500",
+                        fontSize: 19
+                      }}
+                    >
+                      Modifica parola
                     </Button>
                   </Block>
                   <Block
@@ -131,7 +163,7 @@ class Profile extends React.Component {
                     style={{ paddingVertical: 14, alignItems: "baseline" }}
                   >
                     <Text bold size={16} color="#525F7F">
-                      Album
+                      Apartamente postate
                     </Text>
                   </Block>
                   <Block
@@ -141,12 +173,12 @@ class Profile extends React.Component {
                     <Button
                       small
                       color="transparent"
-                      textStyle={{ color: "#5E72E4", fontSize: 12 }}
+                      textStyle={{ color: argonTheme.COLORS.PRIMARY, fontSize: 12 }}
                     >
-                      View all
+                      Vezi tot
                     </Button>
                   </Block>
-                  <Block style={{ paddingBottom: -HeaderHeight * 2 }}>
+                  {/* <Block style={{ paddingBottom: -HeaderHeight * 2 }}>
                     <Block row space="between" style={{ flexWrap: "wrap" }}>
                       {Images.Viewed.map((img, imgIndex) => (
                         <Image
@@ -157,7 +189,7 @@ class Profile extends React.Component {
                         />
                       ))}
                     </Block>
-                  </Block>
+                  </Block> */}
                 </Block>
               </Block>
             </ScrollView>

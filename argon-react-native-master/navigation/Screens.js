@@ -16,6 +16,8 @@ import Profil from "../screens/Profil";
 import Elements from "../screens/Elements";
 import Anunturi from "../screens/Anunturi";
 import AdaugaApartament from "../screens/AdaugaApartament";
+import ModificaDateUser from "../screens/ModificaDateUser";
+import ModificaParola from "../screens/ModificaParola";
 // drawer
 import CustomDrawerContent from "./Menu";
 
@@ -120,6 +122,40 @@ function ProfilStack(props) {
             <Stack.Screen
         name="Pro"
         component={Pro}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              title=""
+              back
+              white
+              transparent
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
+          headerTransparent: true
+        }}
+      />
+      <Stack.Screen
+        name="ModificaDateUser"
+        component={ModificaDateUser}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              title=""
+              back
+              white
+              transparent
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
+          headerTransparent: true
+        }}
+      />
+      <Stack.Screen
+        name="ModificaParola"
+        component={ModificaParola}
         options={{
           header: ({ navigation, scene }) => (
             <Header

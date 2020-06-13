@@ -81,32 +81,33 @@ class Inregistrare extends React.Component {
   
   this.setState({ error: '', loading: true });
   const {lastName, firstName, email, phoneNumber, password, password2} = this.state;
-  const payload = {lastName, firstName, email, phoneNumber, password, password2};
-  console.log(payload); //aici verific ca s-au trimis 
+  const payload = {lastName, firstName, email, phoneNumber, password, matchingPassword: password2};
+  //console.log(payload); //aici verific ca s-au trimis 
   
   const onSuccess = ({data}) => {
     this.setState({isLoading: false, isAuthorized: true});
   };
 
   const onFailure = error => {
-      console.log(error && error.response);
-      this.setState({errors: error.response.data, isLoading: false});
+      // console.log(error && error.response);
+      // this.setState({errors: error.response.data, isLoading: false});
+      console.log(error);
   };
 
-  axios.post("http://localhost:8080/user/register",
-    JSON.stringify(payload) //asta e ce trimitem
+  axios.post("http://192.168.0.102:8080/user/register",
+    payload //asta e ce trimitem
     ,)
     .then((response) => {
       console.log(response);
-      console.log("e bine")
+      console.log("e bine");
+      this.props.navigation.navigate('Acasa');
       //deviceStorage.saveItem("cheie_frumoasa", response.data.jwt);
     })
     .catch((error) => {
-      if(response == 'undefined') {console.log("ba e undefined")}
-      
+
        console.log(error);
        console.log("eroare");
-       onFailure();
+       onFailure(error);
     });
     }
   //  axios.get("http://localhost:8080/user/welcome",
@@ -127,8 +128,11 @@ class Inregistrare extends React.Component {
   //   }
 
   render() {
+    const {isLoading} = this.state;
     return (
+      
       <Block flex middle>
+      <Spinner visible={isLoading} />
         <StatusBar hidden />
         <ImageBackground
           source={Images.RegisterBackground}

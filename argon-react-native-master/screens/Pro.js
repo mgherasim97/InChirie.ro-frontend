@@ -6,7 +6,7 @@ const { height, width } = Dimensions.get('screen');
 import { Images, argonTheme } from '../constants/';
 import { HeaderHeight } from "../constants/utils";
 import { Card } from '../components';
-
+import { Button } from "../components";
 
 import  {useRef} from 'react';
 import Carousel from 'react-native-anchor-carousel';
@@ -152,6 +152,35 @@ export default class Pro extends React.Component {
 
       };
 
+      renderEdit = () => {
+            return (
+                  <View>
+                  <Block style={styles.info}>
+                  <Block
+                    middle
+                    row
+                    space="evenly"
+                    style={{ marginTop: 20, paddingBottom: 24 }}
+                  >
+                    <Button
+                      small
+                      style={{ backgroundColor: argonTheme.COLORS.BLACK }}
+                    >
+                      EDITEAZA
+                    </Button>
+                    <Button
+                      small
+                      style={{ backgroundColor: argonTheme.COLORS.PRIMARY }}
+                    >
+                      STERGE
+                    </Button>
+                    </Block>
+                  </Block>
+                  </View>
+            );
+
+      };
+
       render() {
             return(
 
@@ -162,6 +191,7 @@ export default class Pro extends React.Component {
                               {this.renderDetails()}
                               {this.renderContact()}
                               {this.renderSocialMedia()}
+                              {this.renderEdit()}
                         </ScrollView>
                   </Block>
             );
@@ -195,6 +225,9 @@ export default class Pro extends React.Component {
     paddingHorizontal: theme.SIZES.BASE * 2,
     marginTop: 44,
     color: argonTheme.COLORS.HEADER
+  },
+  info: {
+    paddingHorizontal: 40
   },
   group: {
     paddingTop: theme.SIZES.BASE * 2

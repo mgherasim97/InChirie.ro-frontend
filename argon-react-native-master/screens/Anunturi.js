@@ -19,20 +19,20 @@ const thumbMeasure = (width - 48 - 32) / 3;
 const cardWidth = width - theme.SIZES.BASE * 2;
 const categories = [
   {
-    title: "Music Album",
+    title: "Apartamnete",
     description:
-      "Rock music is a genre of popular music. It developed during and after the 1960s in the United Kingdom.",
+      "Ansamblul nostru beneficiaza de amplasare strategica in zona strazii Somesului, Floresti Cluj la doar 5 minute de Vivo-Polus si in apropierea bazei sportive Unirea.",
     image:
-      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?fit=crop&w=840&q=80",
-    price: "$125"
+      "https://q-cf.bstatic.com/images/hotel/max1024x768/133/133278998.jpg",
+    price: "$125000"
   },
   {
-    title: "Events",
+    title: "Case",
     description:
-      "Rock music is a genre of popular music. It developed during and after the 1960s in the United Kingdom.",
+      "Casele propuse sunt situate într-o zonă liniștită plină de verdeață, unde vă puteți bucura de liniștea naturii, dar având confortul de a vă deplasa într-un timp",
     image:
-      "https://images.unsplash.com/photo-1543747579-795b9c2c3ada?fit=crop&w=840&q=80",
-    price: "$35"
+      "https://img2.imonet.ro/XV06/V0601JDFDJD/casa-de-vanzare-5-camere-brasov-sacele-123587782.jpg",
+    price: "$350000"
   }
 ];
 

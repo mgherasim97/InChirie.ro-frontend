@@ -4,35 +4,48 @@ import {
   ImageBackground,
   Dimensions,
   StatusBar,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
+  ScrollView
 } from "react-native";
 import { Block, Checkbox, Text, theme } from "galio-framework";
 
 import { Button, Icon, Input } from "../components";
 import { Images, argonTheme } from "../constants";
-
-const { width, height } = Dimensions.get("screen");
+import deviceStorage from '../services/deviceStorage'; 
 import axios from 'axios';
 import qs from "qs";
 import Spinner from 'react-native-loading-spinner-overlay';
 
 import APIKit, {setClientToken} from '../share/APIKit';
 
+const { width, height } = Dimensions.get("screen");
+
+
 const params = {
             lastName: "",
+            firstName: "",
             email: "",
+            phoneNumber: "",
             password: "",
+            password2: "",
             errors: {},          // Store error data from the backend here
             isAuthorized: false, // If auth is successful, set this to `true`
             isLoading: false,    // Set this to `true` if You want to show spinner
             
            };
 
-class Autentificare extends React.Component {
+// Things to bear in mind
+// Whenever user types something in the username field we will update our this.state.username thru onUsernameChange(...)
+// Whenever user types something in the password field we will update our this.state.password thru onPasswordChange(...)
+// etc for other fields...
+// Whenever user presses login we will fire registerUser(...)
+// When data from backend arrives we will have to either call onSuccess or onFailure inside our registerUser(...) method
 
-    constructor(props){ 
+class ModificaDateUser extends React.Component {
+
+  constructor(props){ 
     super();
-    this.authUser = this.authUser.bind(this);
+    this.registerUser = this.registerUser.bind(this);
   }
 
   state = params;
@@ -43,19 +56,32 @@ class Autentificare extends React.Component {
     this.setState({lastName});
   };
 
+  onFirstNameChange = firstName => {
+    this.setState({firstName});
+  };
+
   onEmailChange = email => {
     this.setState({email});
+  };
+
+  onPhoneNumberChange = phoneNumber => {
+    this.setState({phoneNumber});
   };
 
   onPasswordChange = password => {
     this.setState({password});
   };
-  
-  authUser() {
 
+  onPassword2Change = password2 => {
+    this.setState({password2});
+  };
+  
+
+  registerUser() {
+  
   this.setState({ error: '', loading: true });
-  const {email, password} = this.state;
-  const payload = {email, password};
+  const {lastName, firstName, email, phoneNumber, password, password2} = this.state;
+  const payload = {lastName, firstName, email, phoneNumber, password, matchingPassword: password2};
   console.log(payload); //aici verific ca s-au trimis 
   
   const onSuccess = ({data}) => {
@@ -68,28 +94,45 @@ class Autentificare extends React.Component {
       console.log(error);
   };
 
-  axios.post("http://192.168.0.102:8080/user/login",
+  axios.post("http://192.168.0.102:8080/user/update",
     payload //asta e ce trimitem
     ,)
     .then((response) => {
       console.log(response);
-      console.log("ok");
-      onSuccess();
+      console.log("e bine");
+      this.props.navigation.navigate('Acasa');
       //deviceStorage.saveItem("cheie_frumoasa", response.data.jwt);
     })
     .catch((error) => {
+
        console.log(error);
        console.log("eroare");
        onFailure(error);
     });
+    }
+  //  axios.get("http://localhost:8080/user/welcome",
+  //   payload //asta e ce trimitem
+  //   ,)
+  //   .then((response) => {
+  //     console.log(response);
+  //     console.log("e bine")
+  //     //deviceStorage.saveItem("cheie_frumoasa", response.data.jwt);
+  //     return response;
+  //   })
+  //   .catch((error) => {
+  //      console.log(error);
+  //      console.log("eroare")
+       
+  //      return error;
+  //   });
+  //   }
 
-  }
-
-  
   render() {
     const {isLoading} = this.state;
     return (
+      
       <Block flex middle>
+      <Spinner visible={isLoading} />
         <StatusBar hidden />
         <ImageBackground
           source={Images.RegisterBackground}
@@ -99,9 +142,10 @@ class Autentificare extends React.Component {
             <Block style={styles.registerContainer}>
               
               <Block flex>
+               <ScrollView>
                 <Block flex={0.17} middle>
                   <Text color="#8898AA" size={25}>
-                    Autentifică-te
+                   Introdu modificarile
                   </Text>
                 </Block>
                 <Block flex center>
@@ -116,8 +160,23 @@ class Autentificare extends React.Component {
                         value={this.state.lastName}
                         borderless
                         placeholder="Nume"
-                        autoCapitalize="none"
-                        autoCorrect={false}
+                        iconContent={
+                          <Icon
+                            size={16}
+                            color={argonTheme.COLORS.ICON}
+                            name="hat-3"
+                            family="ArgonExtra"
+                            style={styles.inputIcons}
+                          />
+                        }
+                      />
+                    </Block>
+                    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+                      <Input
+                        onChangeText={this.onFirstNameChange}
+                        value={this.state.firstName}
+                        borderless
+                        placeholder="Prenume"
                         iconContent={
                           <Icon
                             size={16}
@@ -134,9 +193,24 @@ class Autentificare extends React.Component {
                         onChangeText={this.onEmailChange}
                         value={this.state.email}
                         borderless
-                        autoCapitalize="none"
-                        autoCorrect={false}
                         placeholder="Email"
+                        iconContent={
+                          <Icon
+                            size={16}
+                            color={argonTheme.COLORS.ICON}
+                            name="hat-3"
+                            family="ArgonExtra"
+                            style={styles.inputIcons}
+                          />
+                        }
+                      />
+                    </Block>
+                    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+                      <Input
+                        onChangeText={this.onPhoneNumberChange}  
+                        value={this.state.telefon}
+                        borderless
+                        placeholder="Telefon"
                         iconContent={
                           <Icon
                             size={16}
@@ -148,14 +222,11 @@ class Autentificare extends React.Component {
                         }
                       />
                     </Block>
+
                     <Block width={width * 0.8}>
                       <Input
                         onChangeText={this.onPasswordChange}
                         value={this.state.parola}
-                        maxLength={40}
-                        autoCapitalize="none"
-                        autoCorrect={false}
-                        onSubmitEditing={this.authUser.bind(this)}
                         password
                         borderless
                         placeholder="Parolă"
@@ -169,6 +240,25 @@ class Autentificare extends React.Component {
                           />
                         }
                       />
+                    </Block>
+                    <Block width={width * 0.8}>
+                      <Input
+                        onChangeText={this.onPassword2Change}
+                        value={this.state.parola2}
+                        password
+                        borderless
+                        placeholder="Confirmare parolă"
+                        iconContent={
+                          <Icon
+                            size={16}
+                            color={argonTheme.COLORS.ICON}
+                            name="padlock-unlocked"
+                            family="ArgonExtra"
+                            style={styles.inputIcons}
+                          />
+                        }
+                      />
+                      
                       <Block row style={styles.passwordCheck}>
                         <Text size={12} color={argonTheme.COLORS.MUTED}>
                           Puterea parolei:
@@ -193,6 +283,7 @@ class Autentificare extends React.Component {
                         textStyle={{
                           color: argonTheme.COLORS.PRIMARY,
                           fontSize: 14
+                        
                         }}
                       >
                         Termenele și condițiile
@@ -200,14 +291,15 @@ class Autentificare extends React.Component {
                       
                     </Block>
                     <Block middle>
-                      <Button color="primary" style={styles.createButton} onPress={this.authUser}>
+                      <Button color="primary" style={styles.createButton} onPress={this.registerUser}>
                         <Text bold size={14} color={argonTheme.COLORS.WHITE}>
-                          CREEAZĂ CONT
+                          MODIFICA
                         </Text>
                       </Button>
                     </Block>
                   </KeyboardAvoidingView>
                 </Block>
+                </ScrollView>
               </Block>
             </Block>
           </Block>
@@ -270,4 +362,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Autentificare;
+export default ModificaDateUser;
