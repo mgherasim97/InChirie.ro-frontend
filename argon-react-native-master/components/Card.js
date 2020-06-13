@@ -21,6 +21,15 @@ class Card extends React.Component {
       styles.shadow
     ];
 
+    // let isLoggedIn = false
+    // let button;
+
+    // if (isLoggedIn) {
+    //   button = <Text size={14} style={styles.cardTitle} muted={!ctaColor} color={ctaColor || argonTheme.COLORS.SUCCESS} bold>{item.disponibil}</Text>;
+    // } else {
+    //   button = <Text size={14} style={styles.cardTitle} muted={!ctaColor} color={ctaColor || argonTheme.COLORS.ERROR} bold>{item.disponibil}</Text> ;
+    // }
+
     return (
       <Block row={horizontal} card flex style={cardContainer}>
         <TouchableWithoutFeedback onPress={() => navigation.navigate('Pro')}>
@@ -35,6 +44,7 @@ class Card extends React.Component {
             <Text size={14} style={styles.cardTitle}>{item.pret} euro</Text>
             <Text size={14} style={styles.cardTitle}>{item.location}</Text>
             <Text size={12} muted={!ctaColor} color={ctaColor || argonTheme.COLORS.ACTIVE} bold>{item.cta}</Text>
+            
           </Block>
         </TouchableWithoutFeedback>
       </Block>

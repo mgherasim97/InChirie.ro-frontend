@@ -58,19 +58,31 @@ class Autentificare extends React.Component {
   const payload = {lastName, email, password};
   console.log(payload); //aici verific ca s-au trimis 
   
-  axios.post("aa18zid7pceb5bt.c879gvy4bjgb.eu-west-2.rds.amazonaws.com:3306/user/login",
+  const onSuccess = ({data}) => {
+    this.setState({isLoading: false, isAuthorized: true});
+  };
+
+  const onFailure = error => {
+      console.log(error && error.response);
+      this.setState({errors: error.response.data, isLoading: false});
+  };
+
+  axios.post("http://192.168.5.13:8087/user/login",
     qs.stringify(payload) //asta e ce trimitem
     ,)
     .then((response) => {
       console.log(response);
+      console.log(lalal);
       //deviceStorage.saveItem("cheie_frumoasa", response.data.jwt);
     })
     .catch((error) => {
        console.log(error);
+       console.log(lalal);
     });
 
   }
   render() {
+    const {isLoading} = this.state;
     return (
       <Block flex middle>
         <StatusBar hidden />
@@ -99,6 +111,8 @@ class Autentificare extends React.Component {
                         value={this.state.lastName}
                         borderless
                         placeholder="Nume"
+                        autoCapitalize="none"
+                        autoCorrect={false}
                         iconContent={
                           <Icon
                             size={16}
@@ -115,6 +129,8 @@ class Autentificare extends React.Component {
                         onChangeText={this.onEmailChange}
                         value={this.state.email}
                         borderless
+                        autoCapitalize="none"
+                        autoCorrect={false}
                         placeholder="Email"
                         iconContent={
                           <Icon
@@ -131,6 +147,10 @@ class Autentificare extends React.Component {
                       <Input
                         onChangeText={this.onPasswordChange}
                         value={this.state.parola}
+                        maxLength={40}
+                        autoCapitalize="none"
+                        autoCorrect={false}
+                        onSubmitEditing={this.authUser.bind(this)}
                         password
                         borderless
                         placeholder="Parolă"
@@ -175,7 +195,7 @@ class Autentificare extends React.Component {
                       
                     </Block>
                     <Block middle>
-                      <Button color="primary" style={styles.createButton}>
+                      <Button color="primary" style={styles.createButton} onPress={this.authUser}>
                         <Text bold size={14} color={argonTheme.COLORS.WHITE}>
                           CREEAZĂ CONT
                         </Text>
