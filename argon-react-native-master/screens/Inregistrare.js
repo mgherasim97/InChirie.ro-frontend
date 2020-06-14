@@ -15,7 +15,7 @@ import deviceStorage from '../services/deviceStorage';
 import axios from 'axios';
 import qs from "qs";
 import Spinner from 'react-native-loading-spinner-overlay';
-
+import { AsyncStorage } from 'react-native';
 import APIKit, {setClientToken} from '../share/APIKit';
 
 const { width, height } = Dimensions.get("screen");
@@ -110,22 +110,7 @@ class Inregistrare extends React.Component {
        onFailure(error);
     });
     }
-  //  axios.get("http://localhost:8080/user/welcome",
-  //   payload //asta e ce trimitem
-  //   ,)
-  //   .then((response) => {
-  //     console.log(response);
-  //     console.log("e bine")
-  //     //deviceStorage.saveItem("cheie_frumoasa", response.data.jwt);
-  //     return response;
-  //   })
-  //   .catch((error) => {
-  //      console.log(error);
-  //      console.log("eroare")
-       
-  //      return error;
-  //   });
-  //   }
+
 
   render() {
     const {isLoading} = this.state;

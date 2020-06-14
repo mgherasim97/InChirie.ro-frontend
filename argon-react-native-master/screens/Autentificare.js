@@ -10,13 +10,15 @@ import { Block, Checkbox, Text, theme } from "galio-framework";
 
 import { Button, Icon, Input } from "../components";
 import { Images, argonTheme } from "../constants";
-
+import { AsyncStorage } from 'react-native';
 const { width, height } = Dimensions.get("screen");
 import axios from 'axios';
 import qs from "qs";
 import Spinner from 'react-native-loading-spinner-overlay';
-
+// import Object from './Js';
 import APIKit, {setClientToken} from '../share/APIKit';
+
+let a = "";
 
 const params = {
             lastName: "",
@@ -27,6 +29,12 @@ const params = {
             isLoading: false,    // Set this to `true` if You want to show spinner
             
            };
+
+
+export const Anca = () => {
+  return a;
+}
+
 
 class Autentificare extends React.Component {
 
@@ -52,34 +60,43 @@ class Autentificare extends React.Component {
   };
   
   authUser() {
-
+    
   this.setState({ error: '', loading: true });
   const {email, password} = this.state;
-  const payload = {email, password};
-  //console.log(payload); //aici verific ca s-au trimis 
-  
+  const payload1 = {email, password};
+
+
+  const headers = {
+  'Content-Type': 'application/json',
+  'Authorization': 'Basic ' + window.btoa(email + ":" + password)
+
+  }
+
+  a = headers;
+  console.log(a);
   const onSuccess = ({data}) => {
     this.setState({isLoading: false, isAuthorized: true});
   };
 
   const onFailure = error => {
-      // console.log(error && error.response);
-      // this.setState({errors: error.response.data, isLoading: false});
       console.log(error);
   };
+  //console.log(headers)
+  // AsyncStorage.setItem("headers", headers);
+  axios.get("http://192.168.0.100:8080/user/success"
+    // payload1 //asta e ce trimitem
+    ,{headers: headers})
 
-  axios.post("http://192.168.0.100:8080/user/login",
-    payload //asta e ce trimitem
-    ,)
     .then((response) => {
       console.log(response);
-      console.log("ok");
-      this.props.navigation.navigate('Acasa');
-      //deviceStorage.saveItem("cheie_frumoasa", response.data.jwt);
+      //console.log("ok autentificare");
+      //console.log(this.state);
+      this.props.navigation.navigate('Profil');
+
     })
     .catch((error) => {
        console.log(error);
-       console.log("eroare");
+       console.log("eroare autentificare");
        onFailure(error);
     });
 
