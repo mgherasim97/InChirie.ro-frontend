@@ -1,14 +1,12 @@
-# [Argon React Native](https://creativetimofficial.github.io/argon-react-native/docs/#) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/home?status=Argon%20React%20Native,%20a%20cool%20Argon%20React%20Native%20App%20Template%20%E2%9D%A4%EF%B8%8F%20https%3A//bit.ly/2KAj86H%20%23reactnative%20%23argon%20%23designsystem%20%23developers%20via%20%40CreativeTim)
+# [ÎnChirie.ro](https://creativetimofficial.github.io/argon-react-native/docs/#) [![Tweet](https://img.shields.io/youtube/likes/f75IBP8j_e0?style=social)](https://www.youtube.com/watch?v=f75IBP8j_e0)
 
 
- ![version](https://img.shields.io/badge/version-1.4.0-blue.svg)  [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/argon-react-native.svg?style=flat)](https://github.com/creativetimofficial/argon-react-native/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/argon-react-native.svg?maxAge=2592000)](https://github.com/creativetimofficial/argon-react-native/issues?q=is%3Aissue+is%3Aclosed)
+ ![version](https://img.shields.io/badge/version-1.4.0-blue.svg)  [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/argon-react-native.svg?style=flat)](https://github.com/mgherasim97/InChirie.ro-frontend/tree/features/productPage/argon-react-native-master) 
 
 
-![Product Gif](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-react-native/arg-rn-thumbnail.jpg)
+![Product Gif](https://scontent.fotp1-1.fna.fbcdn.net/v/t1.0-9/104053460_3065017330283377_7807393785801762536_n.jpg?_nc_cat=111&_nc_sid=8024bb&_nc_oc=AQnfp8x0V0QU_JvCIIHXSk2JQil05tSvFsjiJ5zduBTMShDMusOlbHYFp0eO_pr5-Bo&_nc_ht=scontent.fotp1-1.fna&oh=da3a68da87db3e911a4fc3c40444a2aa&oe=5F0CC8E7)
 
-Argon React Native is a fully coded app template built over [Galio.io](https://galio.io/?ref=creativetim), [React Native](https://facebook.github.io/react-native/?ref=creativetim) and [Expo](https://expo.io/?ref=creativetim) to allow you to create powerful and beautiful e-commerce mobile applications. We have redesigned all the usual components in Galio to make it look like Argon's Design System, minimalistic and easy to use.
 
-Start your development with a badass Design System for React Native inspired by Argon Design System. If you like Argon's Design System, you will love this react native app template! It features a huge number of components and screens built to fit together and look amazing. 
 
 ### FULLY CODED COMPONENTS
 
@@ -19,12 +17,8 @@ You will save a lot of time going from prototyping to full-functional code, beca
 ### Components & Cards
 Argon React Native comes packed with a large number of components and cards. Putting together a mobile app has never been easier than matching together different components. From the profile screen to a settings screen, you can easily customise and build your screens. We have created multiple options for you to put together and customise into pixel perfect screens. 
 
-View [ all components/cards here](https://demos.creative-tim.com/argon-react-native/index.html#cards).
-
 ### Example Screens
 If you want to get inspiration or just show something directly to your clients, you can jump start your development with our pre-built example screens. 
-
-View [all screens here](https://demos.creative-tim.com/argon-react-native/index.html#screens).
 
 
 Let us know your thoughts below. And good luck with development!
@@ -37,35 +31,22 @@ Let us know your thoughts below. And good luck with development!
 * [Quick Start](#quick-start)
 * [Documentation](#documentation)
 * [File Structure](#file-structure)
-* [OS Support](#os-support)
-* [Resources](#resources)
-* [Reporting Issues](#reporting-issues)
-* [Technical Support or Questions](#technical-support-or-questions)
-* [Licensing](#licensing)
 * [Useful Links](#useful-links)
 
 ## Versions
 
-[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/html-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/argon-design-system)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/vue-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/vue-argon-design-system)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/react-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/argon-design-system-react)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/react-native-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/argon-react-native)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/angular-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/argon-dashboard-angular)
+[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/html-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/argon-design-system)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/vue-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/vue-argon-design-system)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/react-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/argon-design-system-react)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/react-native-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/argon-react-native)
 
-
-
-
-
-| HTML | React | Angular  |
-| --- | --- | ---  |
-| [![Argon Design System](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-design-system/argon-design-system.jpg)](https://www.creative-tim.com/product/argon-design-system)  | [![Argon Design System React](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-design-system-react/argon-design-system-react.jpg)](https://www.creative-tim.com/product/argon-design-system-react)  | [![Argon Design System Angular](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-design-system-angular/argon-design-system-angular.jpg)](https://www.creative-tim.com/product/argon-design-system-angular)
 
 ## Demo
 
-| Acasa Screen | Profil Screen | Elements Screen | Register Screen |
-| --- | --- | --- | --- |
-| [![Acasa Screen](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-react-native/home-screen.png)](https://demos.creative-tim.com/argon-react-native/) | [![Profile Screen](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-react-native/profile-screen.png)](https://demos.creative-tim.com/argon-react-native/) | [![Elements Screen](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-react-native/elements-screen.png)](https://demos.creative-tim.com/argon-react-native/) | [![Register Screen](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-react-native/register-screen.png)](https://demos.creative-tim.com/argon-react-native/) |
+| Acasa Screen  -------------- | Profil Screen------------- | Elements Screen--------- | Register Screen |
+| ---- | --- | --- | --- |
+|
+|
+[<img src="https://scontent.fotp1-1.fna.fbcdn.net/v/t1.0-9/104332456_3065025350282575_6058928127639768554_n.jpg?_nc_cat=111&_nc_sid=110474&_nc_oc=AQkLcjj_pYb-8IN1LiybC2O1HaYLwkvTXtSXiMYbs0PSPddQzEjjkRpp1GP4MhlnOaI&_nc_ht=scontent.fotp1-1.fna&oh=02514a4fa298e416939f091368b3dd38&oe=5F0B573A" width="160" height="320" />](https://www.creative-tim.com/product/argon-design-system)[<img src="https://scontent.fotp1-1.fna.fbcdn.net/v/t1.0-9/104464327_3065025343615909_2129388247269892469_n.jpg?_nc_cat=111&_nc_sid=110474&_nc_oc=AQkTCo2L6olA45SN2Mf4Q-ms9v2BWPFm22s67tdL0Av6_PHdzb4Dn-bGbWFa-bMNhLQ&_nc_ht=scontent.fotp1-1.fna&oh=1e0bf325d2e4c1d2c68f364a5b7e002b&oe=5F0A5038" width="150" height="320" />](https://www.creative-tim.com/product/vue-argon-design-system)[<img src="https://scontent.fotp1-2.fna.fbcdn.net/v/t1.0-9/104432001_3065025503615893_1415493301335997109_n.jpg?_nc_cat=108&_nc_sid=110474&_nc_oc=AQk61PZB381xIxZZnsEASG_haCZkFbHykwJF8ogcnSPvr3hcuq2tVpbbPR8oaqvQaqA&_nc_ht=scontent.fotp1-2.fna&oh=54d5edc2a941bfc74b3417dbb7e3bd0b&oe=5F0CC9A6" width="150" height="320" />](https://www.creative-tim.com/product/argon-design-system-react)[<img src="https://scontent.fotp1-2.fna.fbcdn.net/v/t1.0-9/104214180_3065025496949227_3388417087056131041_n.jpg?_nc_cat=101&_nc_sid=110474&_nc_oc=AQlleW8zGo-wz9gWj8WPRqk4kwZUh91ktFOkboCERl6DkqrrdfT71O252RuBAw6iOsQ&_nc_ht=scontent.fotp1-2.fna&oh=8192e3af7a03f6a3c07086a31445dc84&oe=5F0AE12C" width="150" height="320" />](https://www.creative-tim.com/product/argon-react-native)
 
-- [Start page](https://demos.creative-tim.com/argon-react-native)
-- [How to install our free demo](https://demos.creative-tim.com/argon-react-native/docs/#/install)
 
-[View more](https://demos.creative-tim.com/argon-react-native)
 
 ## Quick start
 - Try it out on Expo (Simulator for iOS or even your physical device if you have an Android)
@@ -82,6 +63,8 @@ Within the download you'll find the following directories and files:
 ```
 argon-react-native/
 ├── App.js
+├── app.json
+├── .watchmanconfig
 ├── README.md
 ├── app.json
 ├── assets
@@ -114,6 +97,11 @@ argon-react-native/
 │   ├── Pro.js
 │   ├── Profil.js
 │   └── Autentificare.js
+│   ├── AdaugaApartament.js
+│   ├── ModificaDateUser.js
+│   ├── ModificaParola.js
+    
+
 
 ```
 
@@ -127,66 +115,14 @@ At present, we officially aim to support the last two versions of the following 
 
 
 ## Resources
-- Demo: <https://demos.creative-tim.com/argon-react-native>
-- Download Page: <https://www.creative-tim.com/product/argon-react-native>
+
 - Documentation: <https://demos.creative-tim.com/argon-react-native/docs>
-- License Agreement: <https://www.creative-tim.com/license>
-- Support: <https://www.creative-tim.com/contact-us>
-- Issues: [Github Issues Page](https://github.com/creativetimofficial/argon-react-native/issues)
-- [Argon Design System](https://www.creative-tim.com/product/argon-design-system?ref=argonrn-readme) - For Front End Development
+
 - **Dashboards:**
-
-| HTML | React | Angular |
-| --- | --- | ---  |
-| [![Argon HTML](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard/argon-dashboard.jpg)](https://www.creative-tim.com/product/argon-dashboard) | [![Argon Dashboard React](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-react/argon-dashboard-react.jpg)](https://www.creative-tim.com/product/argon-dashboard-react) | [![Argon Dashboard Angular](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-angular/argon-dashboard-angular.jpg)](https://www.creative-tim.com/product/argon-dashboard-angular)
-
-| Node.js | ASP.NET  |
-| --- | --- |
-| [![Argon Dashboard NodeJS](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-nodejs/argon-dashboard-nodejs.jpg)](https://www.creative-tim.com/product/argon-dashboard-nodejs) | [![Argon Dashboard ASP.NET](https://github.com/creativetimofficial/public-assets/blob/master/argon-dashboard-aspnet/argon-dashboard-aspnet.gif)](https://www.creative-tim.com/product/argon-dashboard-asp-net)
-
-
-## Reporting Issues
-
-We use GitHub Issues as the official bug tracker for the Argon React Native. Here are some advices for our users that want to report an issue:
-
-1. Make sure that you are using the latest version of the Argon React Native.
-2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
-3. Some issues may be browser specific, so specifying in what browser you encountered the issue might help.
-
-
-### Technical Support or Questions
-
-If you have questions or need help integrating the product please [contact us](https://www.creative-tim.com/contact-us) instead of opening an issue.
-
-
-## Licensing
-
-- Copyright 2019 Creative Tim (https://www.creative-tim.com/)
-
-- Licensed under MIT (https://github.com/creativetimofficial/argon-react-native/blob/master/LICENSE.md)
-
-
-
-## Useful Links
-
-- [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
-- [Affiliate Program](https://www.creative-tim.com/affiliates/new) (earn money)
-- [Blog Creative Tim](http://blog.creative-tim.com/)
-- [Free Products](https://www.creative-tim.com/bootstrap-themes/free) from Creative Tim
-- [Premium Products](https://www.creative-tim.com/bootstrap-themes/premium) from Creative Tim
-- [React Products](https://www.creative-tim.com/bootstrap-themes/react-themes) from Creative Tim
-- [Angular Products](https://www.creative-tim.com/bootstrap-themes/angular-themes) from Creative Tim
-- [VueJS Products](https://www.creative-tim.com/bootstrap-themes/vuejs-themes) from Creative Tim
-- [More products](https://www.creative-tim.com/bootstrap-themes) from Creative Tim
-- Check our Bundles [here](https://www.creative-tim.com/bundles?ref="argon-github-readme")
-
 
 ### Social Media
 
-Twitter: <https://twitter.com/CreativeTim>
 
-Facebook: <https://www.facebook.com/CreativeTim>
+ - Youtube: <https://www.youtube.com/channel/UC1eDghDaIoXZPSEQ06hP9bA?view_as=subscriber>
 
-Dribbble: <https://dribbble.com/creativetim>
 
-Instagram: <https://www.instagram.com/CreativeTimOfficial>
