@@ -107,11 +107,12 @@ class AdaugaApartament extends React.Component {
   const payload = {title, price, rooms, totalArea, usableArea, orientation, year, floor, floorsBuilding, location, propertyType};
   console.log(payload); //aici verific ca s-au trimis
   
-  axios.post("http://192.168.0.100:8080/user/register",
+  axios.post("http://192.168.0.100:8080/advent/add",
     qs.stringify(payload) //asta e ce trimitem
     ,)
     .then((response) => {
       console.log(response);
+      this.props.navigation.navigate('Acasa');
       //deviceStorage.saveItem("cheie_frumoasa", response.data.jwt);
     })
     .catch((error) => {

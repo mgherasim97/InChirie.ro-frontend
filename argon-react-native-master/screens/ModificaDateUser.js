@@ -15,42 +15,38 @@ import deviceStorage from '../services/deviceStorage';
 import axios from 'axios';
 import qs from "qs";
 import Spinner from 'react-native-loading-spinner-overlay';
-
+import {Anca} from './Autentificare';
 import APIKit, {setClientToken} from '../share/APIKit';
 
 const { width, height } = Dimensions.get("screen");
 
 
 const params = {
+
+            id:"",
             lastName: "",
             firstName: "",
             email: "",
-            phoneNumber: "",
             password: "",
             password2: "",
             errors: {},          // Store error data from the backend here
             isAuthorized: false, // If auth is successful, set this to `true`
             isLoading: false,    // Set this to `true` if You want to show spinner
+            dataSet : [],
+            headers: {}
             
            };
 
-// Things to bear in mind
-// Whenever user types something in the username field we will update our this.state.username thru onUsernameChange(...)
-// Whenever user types something in the password field we will update our this.state.password thru onPasswordChange(...)
-// etc for other fields...
-// Whenever user presses login we will fire registerUser(...)
-// When data from backend arrives we will have to either call onSuccess or onFailure inside our registerUser(...) method
 
 class ModificaDateUser extends React.Component {
 
-  constructor(props){ 
+   constructor(props){ 
     super();
-    this.registerUser = this.registerUser.bind(this);
+    this.onUpdate = this.onUpdate.bind(this);
   }
 
-  state = params;
 
-  componentWillUnmount() {}
+  state = params;
 
   onLastNameChange = lastName => {
     this.setState({lastName});
@@ -75,57 +71,50 @@ class ModificaDateUser extends React.Component {
   onPassword2Change = password2 => {
     this.setState({password2});
   };
-  
 
-  registerUser() {
-  
-  this.setState({ error: '', loading: true });
-  const {lastName, firstName, email, phoneNumber, password, password2} = this.state;
-  const payload = {lastName, firstName, email, phoneNumber, password, matchingPassword: password2};
-  console.log(payload); //aici verific ca s-au trimis 
-  
-  const onSuccess = ({data}) => {
-    this.setState({isLoading: false, isAuthorized: true});
-  };
+  onUpdate(){
 
-  const onFailure = error => {
-      // console.log(error && error.response);
-      // this.setState({errors: error.response.data, isLoading: false});
-      console.log(error);
-  };
+    const {lastName, firstName, email, phoneNumber, password, password2} = this.state;
+    const payload = {lastName, firstName, email, phoneNumber, password, matchingPassword: password2};
 
-  axios.post("http://192.168.0.102:8080/user/update",
-    payload //asta e ce trimitem
-    ,)
+
+    axios.post("http://192.168.0.100:8080/user/updateUser",
+    payload
+    , this.state.headers)
     .then((response) => {
       console.log(response);
-      console.log("e bine");
+      console.log("e bineee updateee");
       this.props.navigation.navigate('Acasa');
-      //deviceStorage.saveItem("cheie_frumoasa", response.data.jwt);
     })
     .catch((error) => {
 
        console.log(error);
        console.log("eroare");
-       onFailure(error);
+      
     });
-    }
-  //  axios.get("http://localhost:8080/user/welcome",
-  //   payload //asta e ce trimitem
-  //   ,)
-  //   .then((response) => {
-  //     console.log(response);
-  //     console.log("e bine")
-  //     //deviceStorage.saveItem("cheie_frumoasa", response.data.jwt);
-  //     return response;
-  //   })
-  //   .catch((error) => {
-  //      console.log(error);
-  //      console.log("eroare")
-       
-  //      return error;
-  //   });
-  //   }
+  }
+
+  componentDidMount(){
+
+    this.state.headers = Anca()
+    console.log("--------------------------------")
+    console.log(Anca());
+    console.log("--------------------------------")
+    axios.get("http://192.168.0.100:8080/user/updateUser",this.state.headers
+    )
+    
+    .then((response) => {
+      console.log(response)
+      console.log("ok update")
+      this.setState({dataSet: response.data})
+    })
+
+    .catch((error) => {
+      console.log(error)
+      console.log("eroare update")
+    })
+
+  }
 
   render() {
     const {isLoading} = this.state;
@@ -159,7 +148,7 @@ class ModificaDateUser extends React.Component {
                         onChangeText={this.onLastNameChange}
                         value={this.state.lastName}
                         borderless
-                        placeholder="Nume"
+                        placeholder={this.state.dataSet.lastName}
                         iconContent={
                           <Icon
                             size={16}
@@ -176,7 +165,7 @@ class ModificaDateUser extends React.Component {
                         onChangeText={this.onFirstNameChange}
                         value={this.state.firstName}
                         borderless
-                        placeholder="Prenume"
+                        placeholder={this.state.dataSet.firstName}
                         iconContent={
                           <Icon
                             size={16}
@@ -193,7 +182,7 @@ class ModificaDateUser extends React.Component {
                         onChangeText={this.onEmailChange}
                         value={this.state.email}
                         borderless
-                        placeholder="Email"
+                        placeholder={this.state.dataSet.email}
                         iconContent={
                           <Icon
                             size={16}
@@ -210,7 +199,7 @@ class ModificaDateUser extends React.Component {
                         onChangeText={this.onPhoneNumberChange}  
                         value={this.state.telefon}
                         borderless
-                        placeholder="Telefon"
+                        placeholder={this.state.dataSet.phoneNumber}
                         iconContent={
                           <Icon
                             size={16}
@@ -229,7 +218,7 @@ class ModificaDateUser extends React.Component {
                         value={this.state.parola}
                         password
                         borderless
-                        placeholder="Parolă"
+                        placeholder={this.state.dataSet.password}
                         iconContent={
                           <Icon
                             size={16}
@@ -247,7 +236,7 @@ class ModificaDateUser extends React.Component {
                         value={this.state.parola2}
                         password
                         borderless
-                        placeholder="Confirmare parolă"
+                        placeholder={this.state.dataSet.matchingPassword}
                         iconContent={
                           <Icon
                             size={16}
@@ -291,7 +280,7 @@ class ModificaDateUser extends React.Component {
                       
                     </Block>
                     <Block middle>
-                      <Button color="primary" style={styles.createButton} onPress={this.registerUser}>
+                      <Button color="primary" style={styles.createButton} onPress={this.onUpdate}>
                         <Text bold size={14} color={argonTheme.COLORS.WHITE}>
                           MODIFICA
                         </Text>
