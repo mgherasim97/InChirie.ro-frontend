@@ -4,10 +4,34 @@
   "description": "Argon React Native, based on Argon Design System. Coded by Creative Tim",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
+    "test": "jest",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFiles": [
+      "./setupTests.js"
+    ]
+  },
+  "compilerOptions": {
+    "noImplicitAny": false
   },
   "repository": {
     "type": "git",
@@ -45,7 +69,17 @@
     "react-native-snap-carousel": "^3.9.0"
   },
   "devDependencies": {
-    "babel-preset-expo": "^7.0.0"
+    "@babel/preset-env": "^7.10.2",
+    "@react-native-community/async-storage": "^1.11.0",
+    "babel-jest": "^26.0.1",
+    "babel-preset-expo": "^7.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.5.0",
+    "jest": "^26.0.1",
+    "jsdom": "^16.2.2",
+    "react-dom": "^16.13.1",
+    "react-test-renderer": "^16.13.1"
   },
   "keywords": [
     "argon react native",

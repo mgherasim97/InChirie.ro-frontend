@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image Carousel rendering Renders correct data 1`] = `
+<View
+  style={
+    Object {
+      "height": 1067.2,
+      "marginTop": 10,
+      "width": 750,
+    }
+  }
+>
+  <Carousel
+    bounces={true}
+    containerWidth={740}
+    data={
+      Array [
+        Object {
+          "content": "Șefa echipei de frontend, nu vrei sa o superi.",
+          "title": "Ilicea Anca Ștefania - \\"Da-mi bag picioarele!\\"",
+          "uri": "https://i.imgur.com/9QlOVC5.jpg",
+        },
+        Object {
+          "content": "O minte sclipitoare, coordonator neoficial al proiectului și programator pe backend.",
+          "title": "Sava Vasile Daniel - \\"Noi la MDS când mai lucrăm?\\"",
+          "uri": "https://i.imgur.com/DN2njLs.jpg",
+        },
+        Object {
+          "content": "Plină de idei, voie bună și dorință de a învăța, programator de backend.",
+          "title": "Negru Luiza - \\"Morții lui de laptop!\\"",
+          "uri": "https://i.imgur.com/yqR5PPp.jpg",
+        },
+        Object {
+          "content": "Inima echipei, cel mai bun dintre cei mai buni. Sclavul Ancăi pe frontend.",
+          "title": "Gherasim Mihai - \\"Acum termin testele... acum...\\"",
+          "uri": "https://i.imgur.com/VtO3zqE.jpg",
+        },
+      ]
+    }
+    inActiveOpacity={0.3}
+    inActiveScale={0.8}
+    initialIndex={0}
+    itemContainerStyle={Object {}}
+    itemWidth={525}
+    keyExtractor={[Function]}
+    minScrollDistance={25}
+    onScrollBeginDrag={[Function]}
+    onScrollEnd={[Function]}
+    onScrollEndDrag={[Function]}
+    pagingEnable={true}
+    renderItem={[Function]}
+    separatorWidth={0}
+    style={
+      Object {
+        "backgroundColor": "#141518",
+        "flex": 1,
+      }
+    }
+  />
+</View>
+`;

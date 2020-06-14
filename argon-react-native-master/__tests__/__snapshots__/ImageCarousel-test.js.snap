@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image Carousel rendering Renders correct data 1`] = `
+<Carousel
+  bounces={true}
+  containerWidth={740}
+  data={
+    Array [
+      Object {
+        "content": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+        "title": "Lorem ipsum dolor sit amet",
+        "uri": "https://i.imgur.com/GImvG4q.jpg",
+      },
+      Object {
+        "content": "Neque porro quisquam est qui dolorem ipsum ",
+        "title": "Lorem ipsum ",
+        "uri": "https://i.imgur.com/Pz2WYAc.jpg",
+      },
+      Object {
+        "content": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+        "title": "Lorem ipsum dolor",
+        "uri": "https://i.imgur.com/IGRuEAa.jpg",
+      },
+      Object {
+        "content": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet",
+        "title": "Lorem ipsum dolor",
+        "uri": "https://i.imgur.com/fRGHItn.jpg",
+      },
+      Object {
+        "content": "Neque porro quisquam est qui dolorem ipsum quia dolor ",
+        "title": "Lorem ipsum ",
+        "uri": "https://i.imgur.com/WmenvXr.jpg",
+      },
+    ]
+  }
+  inActiveOpacity={0.3}
+  inActiveScale={0.8}
+  initialIndex={0}
+  itemContainerStyle={Object {}}
+  itemWidth={525}
+  keyExtractor={[Function]}
+  minScrollDistance={25}
+  onScrollBeginDrag={[Function]}
+  onScrollEnd={[Function]}
+  onScrollEndDrag={[Function]}
+  pagingEnable={true}
+  renderItem={[Function]}
+  separatorWidth={0}
+  style={
+    Object {
+      "backgroundColor": "#141518",
+      "flex": 1,
+    }
+  }
+/>
+`;

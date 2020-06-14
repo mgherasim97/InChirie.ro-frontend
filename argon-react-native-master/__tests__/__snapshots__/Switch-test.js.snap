@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image Carousel rendering Renders correct data 1`] = `
+<Switch
+  ios_backgroundColor="#D4D9DD"
+  thumbColor={null}
+  trackColor={
+    Object {
+      "false": "#5E72E4",
+      "true": "#5E72E4",
+    }
+  }
+/>
+`;

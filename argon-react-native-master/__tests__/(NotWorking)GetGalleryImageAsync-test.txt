@@ -1,0 +1,55 @@
+/**
+ * @jest-environment jsdom
+ */
+
+// import galleryImageAsync from '../share/getGalleryImageAsync';
+
+// // import jsdom from 'jsdom'
+// // const doc = jsdom.jsdom('<!doctype html><html><body></body></html>')
+// // global.document = doc
+// // global.window = doc.defaultView
+
+// var jsdom = require('jsdom');
+// const { JSDOM } = jsdom;
+
+// const { document } = (new JSDOM('')).window;
+// global.document = document;
+
+// // These are NOT WORKING
+// describe('Device Storage function testing', () => {
+
+//     it('The correct photo is returned', async () => {
+
+//         expect(1).toEqual(1);
+
+//     });
+
+    // it('The correct photo is returned', async () => {
+
+    //     const data = await galleryImageAsync(10)
+
+    //     expect(data).toBe();
+
+    // });
+
+
+    // it('The fetch fails with an error', async () => {
+
+    //     expect.assertions(1);
+
+    //     try {
+
+    //     const data = await galleryImageAsync(10)
+        
+    //     // it gets to this assertion if it works
+    //     expect(1).toEqual(1);
+
+    //     } catch (e) {
+    //     expect(e).toMatch('error');
+    //     }
+            
+    // });
+
+
+});
+

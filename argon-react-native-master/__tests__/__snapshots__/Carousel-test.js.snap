@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image Carousel rendering Renders correct data 1`] = `
+<AnimatedComponent
+  automaticallyAdjustContentInsets={false}
+  bounces={true}
+  data={Array []}
+  decelerationRate={0}
+  getItemLayout={[Function]}
+  horizontal={true}
+  inActiveOpacity={0.8}
+  inActiveScale={0.8}
+  initialScrollIndex={0}
+  itemContainerStyle={Object {}}
+  keyExtractor={[Function]}
+  minScrollDistance={25}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEnd={[Function]}
+  onScrollEndDrag={[Function]}
+  pagingEnable={true}
+  renderItem={[Function]}
+  separatorWidth={0}
+  showsHorizontalScrollIndicator={false}
+  style={
+    Array [
+      Object {},
+      Object {
+        "width": 750,
+      },
+      Object {},
+    ]
+  }
+/>
+`;

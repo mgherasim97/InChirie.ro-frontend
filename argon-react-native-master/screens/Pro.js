@@ -9,7 +9,6 @@ import { Card } from '../components';
 import { Button } from "../components";
 
 import  {useRef} from 'react';
-import Carousel from 'react-native-anchor-carousel';
 import ImageCarousel from '../components/ImageCarousel';
 
 import * as Permissions from 'expo-permissions'
