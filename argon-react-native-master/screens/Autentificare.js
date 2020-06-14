@@ -56,7 +56,7 @@ class Autentificare extends React.Component {
   this.setState({ error: '', loading: true });
   const {email, password} = this.state;
   const payload = {email, password};
-  console.log(payload); //aici verific ca s-au trimis 
+  //console.log(payload); //aici verific ca s-au trimis 
   
   const onSuccess = ({data}) => {
     this.setState({isLoading: false, isAuthorized: true});
@@ -68,13 +68,13 @@ class Autentificare extends React.Component {
       console.log(error);
   };
 
-  axios.post("http://192.168.0.102:8080/user/login",
+  axios.post("http://192.168.0.100:8080/user/login",
     payload //asta e ce trimitem
     ,)
     .then((response) => {
       console.log(response);
       console.log("ok");
-      onSuccess();
+      this.props.navigation.navigate('Acasa');
       //deviceStorage.saveItem("cheie_frumoasa", response.data.jwt);
     })
     .catch((error) => {

@@ -96,14 +96,18 @@ class AdaugaApartament extends React.Component {
   onLocationChange = location => {
     this.setState({location});
   };
+
+  onPropertyType = propertyType => {
+    this.setState({propertyType});
+  };
   
   registerApartment() {
   this.setState({ error: '', loading: true });
-  const {title, price, rooms, totalArea, usableArea, orientation, year, floor, floorsBuilding, location} = this.state;
-  const payload = {title, price, rooms, totalArea, usableArea, orientation, year, floor, floorsBuilding, location};
+  const {title, price, rooms, totalArea, usableArea, orientation, year, floor, floorsBuilding, location, propertyType} = this.state;
+  const payload = {title, price, rooms, totalArea, usableArea, orientation, year, floor, floorsBuilding, location, propertyType};
   console.log(payload); //aici verific ca s-au trimis
   
-  axios.post("aa18zid7pceb5bt.c879gvy4bjgb.eu-west-2.rds.amazonaws.com:3306/user/register",
+  axios.post("http://192.168.0.100:8080/user/register",
     qs.stringify(payload) //asta e ce trimitem
     ,)
     .then((response) => {

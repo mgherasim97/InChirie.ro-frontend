@@ -18,6 +18,7 @@ import Anunturi from "../screens/Anunturi";
 import AdaugaApartament from "../screens/AdaugaApartament";
 import ModificaDateUser from "../screens/ModificaDateUser";
 import ModificaParola from "../screens/ModificaParola";
+import Credits from "../screens/Credits";
 // drawer
 import CustomDrawerContent from "./Menu";
 
@@ -254,6 +255,24 @@ function AdaugaApartamentStack(props) {
     </Stack.Navigator>
   );
 }
+
+function CreditsStack(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="screen">
+      <Stack.Screen
+        name="Credits"
+        component={Credits}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header title="Acasa" navigation={navigation} scene={scene} />
+          ),
+          cardStyle: { backgroundColor: "#F8F9FE" }
+        }}
+      />
+
+    </Stack.Navigator>
+  );
+}
 export default function AppStack(props) {
   return (
     <Drawer.Navigator
@@ -292,6 +311,7 @@ export default function AppStack(props) {
       <Drawer.Screen name="AdaugaApartament" component={AdaugaApartamentStack} />
       <Drawer.Screen name="Elements" component={ElementsStack} />
       <Drawer.Screen name="Anunturi" component={AnunturiStack} />
+      <Drawer.Screen name="Credits" component={CreditsStack} />
       
     </Drawer.Navigator>
   );

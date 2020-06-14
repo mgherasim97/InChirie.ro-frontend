@@ -18,6 +18,8 @@ const { width, height } = Dimensions.get("screen");
 const thumbMeasure = (width - 48 - 32) / 3;
 
 const params = {
+
+            id:"",
             lastName: "",
             email: "",
             password: "",
@@ -29,7 +31,41 @@ const params = {
 
 
 class Profile extends React.Component {
+
+
+  getCurrentUser() {
+
+  this.setState({ error: '', loading: true });
+  // const {email, password} = this.state;
+  const payload = {lastName, firstName, email, phoneNumber, password};
+  console.log(payload); //aici verific ca s-au trimis 
   
+  const onSuccess = ({data}) => {
+    this.setState({isLoading: false, isAuthorized: true});
+  };
+
+  const onFailure = error => {
+      // console.log(error && error.response);
+      // this.setState({errors: error.response.data, isLoading: false});
+      console.log(error);
+  };
+
+  axios.post("http://192.168.0.102:8080/user/login",
+    payload //asta e ce trimitem
+    ,)
+    .then((response) => {
+      console.log(response);
+      console.log("ok");
+      onSuccess();
+      //deviceStorage.saveItem("cheie_frumoasa", response.data.jwt);
+    })
+    .catch((error) => {
+       console.log(error);
+       console.log("eroare");
+       onFailure(error);
+    });
+
+  }
   render() {
     const { navigation } = this.props;
     return (

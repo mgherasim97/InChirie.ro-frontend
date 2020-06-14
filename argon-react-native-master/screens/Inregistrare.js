@@ -94,7 +94,7 @@ class Inregistrare extends React.Component {
       console.log(error);
   };
 
-  axios.post("http://192.168.0.102:8080/user/register",
+  axios.post("http://192.168.0.100:8080/user/register",
     payload //asta e ce trimitem
     ,)
     .then((response) => {
