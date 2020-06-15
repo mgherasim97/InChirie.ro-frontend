@@ -56,8 +56,6 @@ Pe backend 1 test, se ruleaza cu UserControllerTest.java
 - expo start 
 
 
-## Documentation
-The documentation for the Argon React Native is hosted at our [website](https://demos.creative-tim.com/argon-react-native/docs/).
 
 
 ## File Structure
