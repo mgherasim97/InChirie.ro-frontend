@@ -7,23 +7,34 @@
 ![Product Gif](https://scontent.fotp1-1.fna.fbcdn.net/v/t1.0-9/104053460_3065017330283377_7807393785801762536_n.jpg?_nc_cat=111&_nc_sid=8024bb&_nc_oc=AQnfp8x0V0QU_JvCIIHXSk2JQil05tSvFsjiJ5zduBTMShDMusOlbHYFp0eO_pr5-Bo&_nc_ht=scontent.fotp1-1.fna&oh=da3a68da87db3e911a4fc3c40444a2aa&oe=5F0CC8E7)
 
 
+### Demo:
+ - https://www.youtube.com/watch?v=q21MDxdjpzs
 
 
-### Example Screens
-If you want to get inspiration or just show something directly to your clients, you can jump start your development with our pre-built example screens. 
+### Teste automate:
+
+Pe frontend 25 teste cu JEST si Enzyme se ruleaza cu yarn test -u --silent
+Pe backend 1 test, se ruleaza cu UserControllerTest.java
+![Product Gif](https://scontent.fotp6-1.fna.fbcdn.net/v/t1.0-9/104273232_3068302819954828_8215329594044830534_n.jpg?_nc_cat=103&_nc_sid=8024bb&_nc_oc=AQlXGc91GufBVoFHQM8ohm_5ItPkO35zu8vvLLaSeBA5lSEZLDJ1tqqSa3l7pBoHmc8&_nc_ht=scontent.fotp6-1.fna&oh=60d2fcc7f6038bf077d931b3a86b11b7&oe=5F0CD1E5)
+![Product Gif](https://scontent.fotp6-1.fna.fbcdn.net/v/t1.0-9/102801664_3068302839954826_6102150437818626846_o.jpg?_nc_cat=109&_nc_sid=8024bb&_nc_oc=AQlF9WdYaSFB_rdIhIWSZ8M5Z6rWokYvzfOPf-I5EBmM4EJd4pu4kYA1ZTR0DuNylK4&_nc_ht=scontent.fotp6-1.fna&oh=c06860d5b431b164091b502a18b12658&oe=5F0E0F34)
+
+### Build tools
+ - Maven
+ - Expo start
+
+### Design patterns
+ - Singleton
 
 
-Let us know your thoughts below. And good luck with development!
+### Diagrama UML
+ - am trimis pe mail
+![Product Gif](https://scontent.fotp6-1.fna.fbcdn.net/v/t1.0-9/82512377_3068302826621494_6177563870956641298_n.jpg?_nc_cat=110&_nc_sid=8024bb&_nc_oc=AQlZRuxVKJFrP67uVGYQMymrACQhzDwBoJXaPHJY3U2ujDxpYOfeyvY_0ASL-Bgy9xc&_nc_ht=scontent.fotp6-1.fna&oh=595cae327d3e16660b99c7d73769662a&oe=5F0F613E)
 
+### Gitflow
+ - commituri, rebase, bux fixes tot aici
 
-## Table of Contents
-
-* [Versions](#versions) 
-* [Demo](#demo)
-* [Quick Start](#quick-start)
-* [Documentation](#documentation)
-* [File Structure](#file-structure)
-* [Useful Links](#useful-links)
+### Trello
+ - https://trello.com/b/USm7vomu/%C3%AEnchiriero
 
 ## Versions
 
