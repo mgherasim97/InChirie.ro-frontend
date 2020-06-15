@@ -76,7 +76,9 @@ class ModificaDateUser extends React.Component {
 
     const {lastName, firstName, email, phoneNumber, password, password2} = this.state;
     const payload = {lastName, firstName, email, phoneNumber, password, matchingPassword: password2};
+    this.setState({password})
 
+    console.log(payload);
 
     axios.post("http://192.168.0.100:8080/user/updateUser",
     payload
@@ -107,6 +109,7 @@ class ModificaDateUser extends React.Component {
       console.log(response)
       console.log("ok update")
       this.setState({dataSet: response.data})
+     
     })
 
     .catch((error) => {
@@ -146,9 +149,10 @@ class ModificaDateUser extends React.Component {
                     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                       <Input
                         onChangeText={this.onLastNameChange}
-                        value={this.state.lastName}
+                        
                         borderless
                         placeholder={this.state.dataSet.lastName}
+                      
                         iconContent={
                           <Icon
                             size={16}
@@ -163,9 +167,9 @@ class ModificaDateUser extends React.Component {
                     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                       <Input
                         onChangeText={this.onFirstNameChange}
-                        value={this.state.firstName}
                         borderless
                         placeholder={this.state.dataSet.firstName}
+                        
                         iconContent={
                           <Icon
                             size={16}
@@ -183,6 +187,7 @@ class ModificaDateUser extends React.Component {
                         value={this.state.email}
                         borderless
                         placeholder={this.state.dataSet.email}
+                        
                         iconContent={
                           <Icon
                             size={16}
@@ -200,6 +205,7 @@ class ModificaDateUser extends React.Component {
                         value={this.state.telefon}
                         borderless
                         placeholder={this.state.dataSet.phoneNumber}
+                        
                         iconContent={
                           <Icon
                             size={16}
@@ -216,9 +222,10 @@ class ModificaDateUser extends React.Component {
                       <Input
                         onChangeText={this.onPasswordChange}
                         value={this.state.parola}
-                        password
+                        
                         borderless
-                        placeholder={this.state.dataSet.password}
+                        placeholder="Parola noua"
+                        
                         iconContent={
                           <Icon
                             size={16}
@@ -236,7 +243,7 @@ class ModificaDateUser extends React.Component {
                         value={this.state.parola2}
                         password
                         borderless
-                        placeholder={this.state.dataSet.matchingPassword}
+                        placeholder="Parola veche"
                         iconContent={
                           <Icon
                             size={16}

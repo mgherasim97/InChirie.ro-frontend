@@ -54,7 +54,6 @@
     "expo-permissions": "~8.0.0",
     "firebase": "^7.14.3",
     "galio-framework": "^0.6.3",
-    "jest": "^26.0.1",
     "prop-types": "^15.7.2",
     "react": "16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.1.tar.gz",

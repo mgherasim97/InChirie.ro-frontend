@@ -99,10 +99,10 @@ export default class Pro extends React.Component {
                   <View 
                   style={styles.mainCharacteristics}>
                         <Text
-                        h2
-                        style={{ marginBottom: theme.SIZES.BASE / 2 }}
+                        h3
+                        style={{ marginBottom: theme.SIZES.BASE / 4 }}
                         color={argonTheme.COLORS.DEFAULT}>
-                              Apartament la cheie Barceni
+                              Apartament Drumul Taberei
                         </Text>
 
                         <Text
@@ -115,14 +115,14 @@ export default class Pro extends React.Component {
                               size={14}
                               color={focused ? "white" : argonTheme.COLORS.PRIMARY}
                         /> */}
-                              Locatie
+                              Bucuresti
                         </Text>
 
                         <Text
                         h4
                         style={{ marginBottom: theme.SIZES.BASE / 2 }}
                         color={argonTheme.COLORS.DEFAULT}>
-                              Pret
+                              2500 euro
                         </Text>   
                   </View>
                 
@@ -133,24 +133,24 @@ export default class Pro extends React.Component {
             return (
                   <View>
                         <Text
-                        h4
+                        h5
                         style={{ marginBottom: theme.SIZES.BASE / 2 }}
                         color={argonTheme.COLORS.DEFAULT}>
-                              Pret
+                              5 etaje
                         </Text>   
 
                         <Text
-                        h4
+                        h5
                         style={{ marginBottom: theme.SIZES.BASE / 2 }}
                         color={argonTheme.COLORS.DEFAULT}>
-                              Pret
+                              5 etaje bloc
                         </Text>   
 
                         <Text
-                        h4
+                        h5
                         style={{ marginBottom: theme.SIZES.BASE / 2 }}
                         color={argonTheme.COLORS.DEFAULT}>
-                              Pret
+                              100 m suprafata utila
                         </Text>   
                   </View>
             )
@@ -160,10 +160,10 @@ export default class Pro extends React.Component {
             return (
                   <View>
                         <Text
-                        h4
+                        h5
                         style={{ marginBottom: theme.SIZES.BASE / 2 }}
                         color={argonTheme.COLORS.DEFAULT}>
-                              telefon
+                              Numar de telefon contact: 0728067085
                         </Text>   
                   </View>
             )
@@ -263,7 +263,7 @@ export default class Pro extends React.Component {
                          Turul apartamentului
                   </Text>
                   <Text style={styles.text} onPress={this.onOpenApp}>
-                   Cine e gras?
+                   Contact
                   </Text>
                   </View>
                   </Block>
@@ -322,7 +322,7 @@ export default class Pro extends React.Component {
     width: width,
     height:width*0.56,
     color:argonTheme.COLORS.PRIMARY,  
-    shadowColor: "magenta",
+    shadowColor: argonTheme.COLORS.PRIMARY,
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 4,
     shadowOpacity: 0.2,

@@ -131,10 +131,7 @@ class Profile extends React.Component {
                     source={{ uri: Images.ProfilePicture }}
                     style={styles.avatar}
                   />
-                  <Text>{this.state.dataSet.lastName}</Text>
-                  <Text>{this.state.dataSet.lastName}</Text>
-                  <Text>{this.state.dataSet.lastName}</Text>
-                  <Text>{this.state.dataSet.lastName}</Text>
+                 
                 </Block>
                 <Block style={styles.info}>
                   <Block
@@ -195,10 +192,10 @@ class Profile extends React.Component {
                 <Block flex>
                   <Block middle style={styles.nameInfo}>
                     <Text bold size={28} color="#32325D">
-                      Jessica Jones, 27
+                     {this.state.dataSet.lastName}
                     </Text>
                     <Text size={16} color="#32325D" style={{ marginTop: 10 }}>
-                      San Francisco, USA
+                      {this.state.dataSet.lastName}
                     </Text>
                   </Block>
                   <Block middle style={{ marginTop: 30, marginBottom: 16 }}>
@@ -210,8 +207,7 @@ class Profile extends React.Component {
                       color="#525F7F"
                       style={{ textAlign: "center" }}
                     >
-                      An artist of considerable range, Jessica name taken by
-                      Melbourne …
+                      {this.state.dataSet.email}
 
                     </Text>
 

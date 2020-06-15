@@ -127,25 +127,7 @@ class Autentificare extends React.Component {
                     behavior="padding"
                     enabled
                   >
-                    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
-                      <Input
-                        onChangeText={this.onLastNameChange}
-                        value={this.state.lastName}
-                        borderless
-                        placeholder="Nume"
-                        autoCapitalize="none"
-                        autoCorrect={false}
-                        iconContent={
-                          <Icon
-                            size={16}
-                            color={argonTheme.COLORS.ICON}
-                            name="hat-3"
-                            family="ArgonExtra"
-                            style={styles.inputIcons}
-                          />
-                        }
-                      />
-                    </Block>
+                   
                     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                       <Input
                         onChangeText={this.onEmailChange}
@@ -219,7 +201,7 @@ class Autentificare extends React.Component {
                     <Block middle>
                       <Button color="primary" style={styles.createButton} onPress={this.authUser}>
                         <Text bold size={14} color={argonTheme.COLORS.WHITE}>
-                          CREEAZĂ CONT
+                          AUTENTIFICARE
                         </Text>
                       </Button>
                     </Block>

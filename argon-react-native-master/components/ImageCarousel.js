@@ -20,27 +20,27 @@ const { width } = Dimensions.get('window');
 
 const data = [
   {
-    uri: 'https://i.imgur.com/GImvG4q.jpg',
+    uri: 'https://r-cf.bstatic.com/images/hotel/max1024x768/101/101927297.jpg',
     title: 'Lorem ipsum dolor sit amet',
     content: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...'
   },
   {
-    uri: 'https://i.imgur.com/Pz2WYAc.jpg',
+    uri: 'https://q-cf.bstatic.com/images/hotel/max1024x768/133/133278998.jpg',
     title: 'Lorem ipsum ',
     content: 'Neque porro quisquam est qui dolorem ipsum '
   },
   {
-    uri: 'https://i.imgur.com/IGRuEAa.jpg',
+    uri: 'https://q-xx.bstatic.com/xdata/images/hotel/840x460/118956071.jpg?k=167a5892e4f98e7cc358d922c16d5bb9c8860efc3e8771e426c08055fe043c04&o=',
     title: 'Lorem ipsum dolor',
     content: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...'
   },
   {
-    uri: 'https://i.imgur.com/fRGHItn.jpg',
+    uri: 'https://q-cf.bstatic.com/images/hotel/max1024x768/171/171770259.jpg',
     title: 'Lorem ipsum dolor',
     content: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet'
   },
   {
-    uri: 'https://i.imgur.com/WmenvXr.jpg',
+    uri: 'https://q-xx.bstatic.com/xdata/images/hotel/840x460/200051570.jpg?k=52c15a2aa674672a1440bd1d596e57f918b2fbdc0c942b6a5add5a6dc0f4a165&o=',
     title: 'Lorem ipsum ',
     content: 'Neque porro quisquam est qui dolorem ipsum quia dolor '
   }

@@ -15,7 +15,7 @@ import deviceStorage from '../services/deviceStorage';
 import axios from 'axios';
 import qs from "qs";
 import Spinner from 'react-native-loading-spinner-overlay';
-
+import {Anca} from './Autentificare';
 import APIKit, {setClientToken} from '../share/APIKit';
 
 const { width, height } = Dimensions.get("screen");
@@ -35,7 +35,9 @@ const params = {
             location: "",  
             errors: {},          // Store error data from the backend here 
             isAuthorized: false, // If auth is successful, set this to `true`
-            isLoading: false,    // Set this to `true` if You want to show spinner
+            isLoading: false,
+            dataSet : [],
+            headers: {}    
             
            };
 
@@ -48,6 +50,7 @@ const params = {
 
 class AdaugaApartament extends React.Component {
 
+  
   constructor(props){ 
     super();
     this.registerApartment = this.registerApartment.bind(this);
@@ -103,19 +106,21 @@ class AdaugaApartament extends React.Component {
   
   registerApartment() {
   this.setState({ error: '', loading: true });
-  const {title, price, rooms, totalArea, usableArea, orientation, year, floor, floorsBuilding, location, propertyType} = this.state;
-  const payload = {title, price, rooms, totalArea, usableArea, orientation, year, floor, floorsBuilding, location, propertyType};
+  const {title, price, rooms, totalArea, usableArea, orientation, year, floor, floorsBuilding, propertyType, location} = this.state;
+  const payload = {title, price, rooms, totalArea, usableArea, orientation, year, floor, floorsBuilding,propertyType ,location };
+  this.state.headers = Anca()
   console.log(payload); //aici verific ca s-au trimis
-  
-  axios.post("http://192.168.0.100:8080/advent/add",
-    qs.stringify(payload) //asta e ce trimitem
-    ,)
+  console.log(this.state.headers)
+  axios.post("http://192.168.0.100:8080/advert/create",
+    payload //asta e ce trimitem
+    ,this.state.headers)
     .then((response) => {
       console.log(response);
       this.props.navigation.navigate('Acasa');
       //deviceStorage.saveItem("cheie_frumoasa", response.data.jwt);
     })
     .catch((error) => {
+       console.log("ljjsjsjs");
        console.log(error);
     });
     }
@@ -152,6 +157,23 @@ class AdaugaApartament extends React.Component {
                         value={this.state.title}
                         borderless
                         placeholder="Titluu apartament "
+                        iconContent={
+                          <Icon
+                            size={16}
+                            color={argonTheme.COLORS.ICON}
+                            name="hat-3"
+                            family="ArgonExtra"
+                            style={styles.inputIcons}
+                          />
+                        }
+                      />
+                    </Block>
+                    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+                      <Input
+                        onChangeText={this.onPropertyType}
+                        value={this.state.propertyType}
+                        borderless
+                        placeholder="Tip apartament"
                         iconContent={
                           <Icon
                             size={16}
@@ -223,7 +245,7 @@ class AdaugaApartament extends React.Component {
                       <Input
                         onChangeText={this.onUsableAreaChange}
                         value={this.state.usableArea}
-                        password
+                        
                         borderless
                         placeholder="usableArea"
                         iconContent={
@@ -242,7 +264,7 @@ class AdaugaApartament extends React.Component {
                       <Input
                         onChangeText={this.onOrientationChange}
                         value={this.state.orientation}
-                        password
+                        
                         borderless
                         placeholder="orientation"
                         iconContent={
@@ -261,7 +283,7 @@ class AdaugaApartament extends React.Component {
                       <Input
                         onChangeText={this.onYearChange}
                         value={this.state.year}
-                        password
+                       
                         borderless
                         placeholder="year"
                         iconContent={
@@ -280,7 +302,7 @@ class AdaugaApartament extends React.Component {
                       <Input
                         onChangeText={this.onFloorChange}
                         value={this.state.floor}
-                        password
+                        
                         borderless
                         placeholder="floor"
                         iconContent={
@@ -299,7 +321,7 @@ class AdaugaApartament extends React.Component {
                       <Input
                         onChangeText={this.onFloorsBuildingChange}
                         value={this.state.floorsBuilding}
-                        password
+                       
                         borderless
                         placeholder="floorsBuilding"
                         iconContent={
@@ -318,7 +340,7 @@ class AdaugaApartament extends React.Component {
                       <Input
                         onChangeText={this.onLocationChange}
                         value={this.state.location}
-                        password
+                        
                         borderless
                         placeholder="location"
                         iconContent={
